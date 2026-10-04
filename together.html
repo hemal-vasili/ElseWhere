@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Play, connect and spend time together on ElseWhere."
+    >
+
+    <title>Together — ElseWhere</title>
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/together.css">
+</head>
+
+<body class="together-page">
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div
+        class="together-background"
+        aria-hidden="true"
+    >
+        <div class="together-bg-glow together-bg-glow-one"></div>
+        <div class="together-bg-glow together-bg-glow-two"></div>
+        <div class="together-bg-glow together-bg-glow-three"></div>
+
+        <div class="together-bg-grid"></div>
+        <div class="together-bg-noise"></div>
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="together-header"
+        id="togetherHeader"
+    >
+
+        <div class="together-header-inner">
+
+            <!-- Brand -->
+            <a
+                href="hub.html"
+                class="together-brand"
+                aria-label="Back to ElseWhere home"
+            >
+
+                <span
+                    class="together-brand-icon"
+                    aria-hidden="true"
+                >
+                    ♥
+                </span>
+
+                <span class="together-brand-name">
+                    ElseWhere
+                </span>
+
+            </a>
+
+
+            <!-- Navigation -->
+            <nav
+                class="together-nav"
+                aria-label="Main navigation"
+            >
+
+                <a
+                    href="hub.html"
+                    class="together-nav-link"
+                >
+                    <span aria-hidden="true">⌂</span>
+                    Home
+                </a>
+
+                <a
+                    href="together.html"
+                    class="together-nav-link active"
+                    aria-current="page"
+                >
+                    <span aria-hidden="true">✦</span>
+                    Together
+                </a>
+
+                <a
+                    href="memories.html"
+                    class="together-nav-link"
+                >
+                    <span aria-hidden="true">♡</span>
+                    Memories
+                </a>
+
+                <a
+                    href="our-world.html"
+                    class="together-nav-link"
+                >
+                    <span aria-hidden="true">⌁</span>
+                    Our World
+                </a>
+
+            </nav>
+
+
+            <!-- Actions -->
+            <div class="together-header-actions">
+
+                <a
+                    href="settings.html"
+                    class="together-profile"
+                >
+
+                    <span class="together-profile-avatar">
+                        ♥
+                    </span>
+
+                    <span class="together-profile-name">
+                        You
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="together-menu-button"
+                    id="togetherMenuButton"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile menu -->
+        <div
+            class="together-mobile-menu"
+            id="togetherMobileMenu"
+        >
+
+            <nav aria-label="Mobile navigation">
+
+                <a href="hub.html">
+                    <span aria-hidden="true">⌂</span>
+                    Home
+                </a>
+
+                <a
+                    href="together.html"
+                    class="active"
+                >
+                    <span aria-hidden="true">✦</span>
+                    Together
+                </a>
+
+                <a href="memories.html">
+                    <span aria-hidden="true">♡</span>
+                    Memories
+                </a>
+
+                <a href="our-world.html">
+                    <span aria-hidden="true">⌁</span>
+                    Our World
+                </a>
+
+                <a href="settings.html">
+                    <span aria-hidden="true">⚙</span>
+                    Settings
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="together-main">
+
+        <div class="together-container">
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <section class="together-hero">
+
+                <div class="together-hero-copy">
+
+                    <div class="together-eyebrow">
+
+                        <span class="together-eyebrow-line"></span>
+
+                        YOUR TIME TOGETHER
+
+                        <span class="together-private">
+                            PRIVATE
+                        </span>
+
+                    </div>
+
+
+                    <h1>
+                        Just the two
+                        <span>of you.</span>
+                    </h1>
+
+
+                    <p>
+                        Play something. Challenge each other.
+                        Or just spend a little time together.
+                    </p>
+
+                </div>
+
+
+                <!-- Hero visual -->
+                <div class="together-hero-visual">
+
+                    <div class="together-hero-orbit orbit-one"></div>
+                    <div class="together-hero-orbit orbit-two"></div>
+                    <div class="together-hero-orbit orbit-three"></div>
+
+                    <div class="together-hero-center">
+
+                        <span class="together-center-heart">
+                            ♥
+                        </span>
+
+                        <span class="together-center-label">
+                            TOGETHER
+                        </span>
+
+                    </div>
+
+
+                    <div class="together-floating-card together-float-one">
+                        <span>✦</span>
+                        Two player
+                    </div>
+
+                    <div class="together-floating-card together-float-two">
+                        <span>♡</span>
+                        Just you two
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FEATURED GAME
+            ================================================== -->
+
+            <section
+                class="together-featured"
+                aria-labelledby="featured-game-title"
+            >
+
+                <div class="together-featured-visual">
+
+                    <div class="featured-glow"></div>
+
+                    <div class="featured-game-window">
+
+                        <div class="featured-window-top">
+
+                            <div class="featured-window-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <span>
+                                COUPLE PLAY
+                            </span>
+
+                            <span class="featured-window-private">
+                                PRIVATE
+                            </span>
+
+                        </div>
+
+
+                        <div class="featured-game-body">
+
+                            <div class="featured-game-badge">
+                                FEATURED
+                            </div>
+
+
+                            <div class="featured-game-art">
+
+                                <div class="featured-art-ring ring-a"></div>
+                                <div class="featured-art-ring ring-b"></div>
+
+                                <div class="featured-art-center">
+                                    <span>♥</span>
+                                </div>
+
+                                <span class="featured-art-token token-one">
+                                    1
+                                </span>
+
+                                <span class="featured-art-token token-two">
+                                    2
+                                </span>
+
+                                <span class="featured-art-spark spark-one">
+                                    ✦
+                                </span>
+
+                                <span class="featured-art-spark spark-two">
+                                    ·
+                                </span>
+
+                            </div>
+
+
+                            <div class="featured-game-footer">
+
+                                <div>
+                                    <span>
+                                        COUPLE GAME
+                                    </span>
+
+                                    <strong>
+                                        Coming soon
+                                    </strong>
+                                </div>
+
+                                <span class="featured-game-lock">
+                                    ♢
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="together-featured-content">
+
+                    <span class="together-section-label">
+                        YOUR FIRST GAME
+                    </span>
+
+
+                    <h2 id="featured-game-title">
+                        Something fun
+                        <span>for two.</span>
+                    </h2>
+
+
+                    <p>
+                        ElseWhere games are designed around
+                        spending time together — not winning
+                        against each other.
+                    </p>
+
+
+                    <div class="together-feature-points">
+
+                        <div class="together-feature-point">
+
+                            <span>01</span>
+
+                            <div>
+                                <strong>
+                                    Made for two
+                                </strong>
+
+                                <p>
+                                    Built around shared play
+                                    and interaction.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="together-feature-point">
+
+                            <span>02</span>
+
+                            <div>
+                                <strong>
+                                    Private by design
+                                </strong>
+
+                                <p>
+                                    Your games belong to
+                                    your shared space.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="together-feature-point">
+
+                            <span>03</span>
+
+                            <div>
+                                <strong>
+                                    More to come
+                                </strong>
+
+                                <p>
+                                    New ways to play can be
+                                    added to your hub over time.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="together-primary-button"
+                        id="featuredPlayButton"
+                    >
+                        <span>Play when ready</span>
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 GAME COLLECTION
+            ================================================== -->
+
+            <section
+                class="together-games"
+                aria-labelledby="games-title"
+            >
+
+                <div class="together-section-heading">
+
+                    <div>
+
+                        <span class="together-section-label">
+                            YOUR COLLECTION
+                        </span>
+
+                        <h2 id="games-title">
+                            Ways to spend time together.
+                        </h2>
+
+                    </div>
+
+                    <span class="together-section-meta">
+                        MORE EXPERIENCES COMING
+                    </span>
+
+                </div>
+
+
+                <div class="together-game-grid">
+
+
+                    <!-- Game 1 -->
+                    <article class="together-game-card">
+
+                        <div class="game-card-top">
+
+                            <span class="game-card-number">
+                                01
+                            </span>
+
+                            <span class="game-card-state">
+                                SOON
+                            </span>
+
+                        </div>
+
+
+                        <div class="game-card-art game-art-one">
+
+                            <div class="game-art-orbit"></div>
+
+                            <div class="game-art-symbol">
+                                ♡
+                            </div>
+
+                            <span>✦</span>
+                            <span>·</span>
+
+                        </div>
+
+
+                        <div class="game-card-content">
+
+                            <span>
+                                MEMORY GAME
+                            </span>
+
+                            <h3>
+                                Remember Us
+                            </h3>
+
+                            <p>
+                                A little game built around
+                                the moments you share.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="game-card-button"
+                            data-game="remember-us"
+                        >
+                            Coming soon
+                            <span>→</span>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Game 2 -->
+                    <article class="together-game-card">
+
+                        <div class="game-card-top">
+
+                            <span class="game-card-number">
+                                02
+                            </span>
+
+                            <span class="game-card-state">
+                                SOON
+                            </span>
+
+                        </div>
+
+
+                        <div class="game-card-art game-art-two">
+
+                            <div class="game-art-board">
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                                <span></span>
+                                <span></span>
+                                <span></span>
+
+                            </div>
+
+                            <div class="game-art-token token-a">
+                                ♥
+                            </div>
+
+                            <div class="game-art-token token-b">
+                                ♥
+                            </div>
+
+                        </div>
+
+
+                        <div class="game-card-content">
+
+                            <span>
+                                BOARD GAME
+                            </span>
+
+                            <h3>
+                                Two of Us
+                            </h3>
+
+                            <p>
+                                Take turns, make choices and
+                                see where the two of you go.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="game-card-button"
+                            data-game="two-of-us"
+                        >
+                            Coming soon
+                            <span>→</span>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Game 3 -->
+                    <article class="together-game-card">
+
+                        <div class="game-card-top">
+
+                            <span class="game-card-number">
+                                03
+                            </span>
+
+                            <span class="game-card-state">
+                                SOON
+                            </span>
+
+                        </div>
+
+
+                        <div class="game-card-art game-art-three">
+
+                            <div class="game-art-question">
+                                ?
+                            </div>
+
+                            <div class="game-art-choice choice-a">
+                                A
+                            </div>
+
+                            <div class="game-art-choice choice-b">
+                                B
+                            </div>
+
+                        </div>
+
+
+                        <div class="game-card-content">
+
+                            <span>
+                                COUPLE QUIZ
+                            </span>
+
+                            <h3>
+                                How Well Do You Know Me?
+                            </h3>
+
+                            <p>
+                                Questions, guesses and the
+                                occasional surprise.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="game-card-button"
+                            data-game="couple-quiz"
+                        >
+                            Coming soon
+                            <span>→</span>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Game 4 -->
+                    <article class="together-game-card">
+
+                        <div class="game-card-top">
+
+                            <span class="game-card-number">
+                                04
+                            </span>
+
+                            <span class="game-card-state">
+                                SOON
+                            </span>
+
+                        </div>
+
+
+                        <div class="game-card-art game-art-four">
+
+                            <div class="game-art-wheel">
+
+                                <span>♡</span>
+                                <span>✦</span>
+                                <span>?</span>
+                                <span>♥</span>
+
+                            </div>
+
+                            <div class="game-art-wheel-center">
+                                ♥
+                            </div>
+
+                        </div>
+
+
+                        <div class="game-card-content">
+
+                            <span>
+                                RANDOM
+                            </span>
+
+                            <h3>
+                                Pick For Us
+                            </h3>
+
+                            <p>
+                                Let the little universe decide
+                                what you should do next.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="game-card-button"
+                            data-game="pick-for-us"
+                        >
+                            Coming soon
+                            <span>→</span>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 COUPLE MOMENT
+            ================================================== -->
+
+            <section class="together-moment">
+
+                <div class="together-moment-content">
+
+                    <span class="together-section-label">
+                        NO SCORE NEEDED
+                    </span>
+
+                    <h2>
+                        Sometimes the best
+                        <span>game</span> is simply
+                        staying together.
+                    </h2>
+
+                    <p>
+                        ElseWhere is built to give you a reason
+                        to pause, talk, laugh and make another
+                        tiny memory.
+                    </p>
+
+                </div>
+
+
+                <div class="together-moment-visual">
+
+                    <div class="moment-circle circle-one"></div>
+                    <div class="moment-circle circle-two"></div>
+
+                    <div class="moment-heart">
+                        ♥
+                    </div>
+
+                    <div class="moment-caption">
+                        <span>YOU</span>
+                        <i></i>
+                        <span>ME</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         GAME MESSAGE MODAL
+    ====================================================== -->
+
+    <div
+        class="together-modal"
+        id="togetherModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="together-modal-backdrop"
+            data-together-close
+        ></div>
+
+
+        <section
+            class="together-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="togetherModalTitle"
+        >
+
+            <button
+                type="button"
+                class="together-modal-close"
+                id="togetherModalClose"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+
+            <div class="together-modal-icon">
+                ✦
+            </div>
+
+
+            <span class="together-modal-label">
+                COUPLE PLAY
+            </span>
+
+
+            <h2 id="togetherModalTitle">
+                This one isn't ready yet.
+            </h2>
+
+
+            <p id="togetherModalText">
+                The game system will be connected here.
+                For now, your collection is waiting for
+                the experiences to be built.
+            </p>
+
+
+            <button
+                type="button"
+                class="together-modal-button"
+                data-together-close
+            >
+                Back to our space
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="together-footer">
+
+        <div class="together-footer-inner">
+
+            <span>
+                © 2026 ElseWhere
+            </span>
+
+            <span>
+                Made for two. ♥
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="./js/global.js" defer></script>
+    <script src="./js/together.js" defer></script>
+
+</body>
+</html>
