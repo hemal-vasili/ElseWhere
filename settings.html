@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Manage your ElseWhere profile, preferences and private space."
+    >
+
+    <title>Settings — ElseWhere</title>
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/settings.css">
+</head>
+
+<body class="settings-page">
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div
+        class="settings-background"
+        aria-hidden="true"
+    >
+        <div class="settings-bg-glow settings-bg-glow-one"></div>
+        <div class="settings-bg-glow settings-bg-glow-two"></div>
+        <div class="settings-bg-glow settings-bg-glow-three"></div>
+
+        <div class="settings-bg-grid"></div>
+        <div class="settings-bg-noise"></div>
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="settings-header"
+        id="settingsHeader"
+    >
+
+        <div class="settings-header-inner">
+
+            <!-- Brand -->
+            <a
+                href="hub.html"
+                class="settings-brand"
+                aria-label="Back to ElseWhere home"
+            >
+                <span
+                    class="settings-brand-icon"
+                    aria-hidden="true"
+                >
+                    ♥
+                </span>
+
+                <span class="settings-brand-name">
+                    ElseWhere</span>
+                </span>
+            </a>
+
+
+            <!-- Desktop navigation -->
+            <nav
+                class="settings-nav"
+                aria-label="Main navigation"
+            >
+
+                <a
+                    href="hub.html"
+                    class="settings-nav-link"
+                >
+                    <span aria-hidden="true">⌂</span>
+                    Home
+                </a>
+
+                <a
+                    href="together.html"
+                    class="settings-nav-link"
+                >
+                    <span aria-hidden="true">✦</span>
+                    Together
+                </a>
+
+                <a
+                    href="memories.html"
+                    class="settings-nav-link"
+                >
+                    <span aria-hidden="true">♡</span>
+                    Memories
+                </a>
+
+                <a
+                    href="our-world.html"
+                    class="settings-nav-link"
+                >
+                    <span aria-hidden="true">⌁</span>
+                    Our World
+                </a>
+
+            </nav>
+
+
+            <!-- Header actions -->
+            <div class="settings-header-actions">
+
+                <a
+                    href="hub.html"
+                    class="settings-back-link"
+                >
+                    <span aria-hidden="true">←</span>
+                    Back to hub
+                </a>
+
+
+                <button
+                    type="button"
+                    class="settings-menu-button"
+                    id="settingsMenuButton"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile navigation -->
+        <div
+            class="settings-mobile-menu"
+            id="settingsMobileMenu"
+        >
+
+            <nav aria-label="Mobile navigation">
+
+                <a href="hub.html">
+                    <span aria-hidden="true">⌂</span>
+                    Home
+                </a>
+
+                <a href="together.html">
+                    <span aria-hidden="true">✦</span>
+                    Together
+                </a>
+
+                <a href="memories.html">
+                    <span aria-hidden="true">♡</span>
+                    Memories
+                </a>
+
+                <a href="our-world.html">
+                    <span aria-hidden="true">⌁</span>
+                    Our World
+                </a>
+
+                <a
+                    href="settings.html"
+                    class="active"
+                >
+                    <span aria-hidden="true">⚙</span>
+                    Settings
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="settings-main">
+
+        <div class="settings-container">
+
+
+            <!-- =================================================
+                 PAGE INTRO
+            ================================================== -->
+
+            <section class="settings-intro">
+
+                <div class="settings-intro-copy">
+
+                    <div class="settings-eyebrow">
+
+                        <span class="settings-eyebrow-line"></span>
+
+                        YOUR PREFERENCES
+
+                        <span class="settings-private">
+                            PRIVATE
+                        </span>
+
+                    </div>
+
+
+                    <h1>
+                        Make ElseWhere
+                        <span>feel like yours.</span>
+                    </h1>
+
+
+                    <p>
+                        Manage your profile, appearance,
+                        notifications and shared-space preferences.
+                    </p>
+
+                </div>
+
+
+                <div class="settings-intro-mark">
+
+                    <div class="settings-mark-ring ring-one"></div>
+                    <div class="settings-mark-ring ring-two"></div>
+
+                    <div class="settings-mark-center">
+                        ⚙
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PROFILE + ACCOUNT
+            ================================================== -->
+
+            <section class="settings-section">
+
+                <div class="settings-section-heading">
+
+                    <div>
+                        <span class="settings-section-label">
+                            ACCOUNT
+                        </span>
+
+                        <h2>
+                            Your profile.
+                        </h2>
+                    </div>
+
+                    <span class="settings-section-meta">
+                        PERSONAL
+                    </span>
+
+                </div>
+
+
+                <div class="settings-account-card">
+
+                    <!-- Avatar -->
+                    <div class="settings-account-avatar-wrap">
+
+                        <div class="settings-account-avatar">
+                            <span id="settingsAvatarLetter">
+                                Y
+                            </span>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="settings-avatar-button"
+                            id="changeAvatarButton"
+                        >
+                            Change
+                        </button>
+
+                    </div>
+
+
+                    <!-- Account details -->
+                    <div class="settings-account-details">
+
+                        <div class="settings-field">
+
+                            <label for="displayName">
+                                Display name
+                            </label>
+
+                            <input
+                                id="displayName"
+                                type="text"
+                                value="You"
+                                maxlength="60"
+                                autocomplete="name"
+                            >
+
+                        </div>
+
+
+                        <div class="settings-field">
+
+                            <label for="emailAddress">
+                                Email address
+                            </label>
+
+                            <input
+                                id="emailAddress"
+                                type="email"
+                                placeholder="Not connected yet"
+                                autocomplete="email"
+                                disabled
+                            >
+
+                        </div>
+
+
+                        <div class="settings-account-note">
+
+                            <span class="settings-note-icon">
+                                ♢
+                            </span>
+
+                            <p>
+                                Your account details will be connected
+                                when authentication is enabled.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Account status -->
+                    <div class="settings-account-status">
+
+                        <span class="settings-status-dot"></span>
+
+                        <div>
+
+                            <span>
+                                ACCOUNT STATUS
+                            </span>
+
+                            <strong>
+                                Frontend preview
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 APPEARANCE
+            ================================================== -->
+
+            <section class="settings-section">
+
+                <div class="settings-section-heading">
+
+                    <div>
+                        <span class="settings-section-label">
+                            APPEARANCE
+                        </span>
+
+                        <h2>
+                            Set the mood.
+                        </h2>
+                    </div>
+
+                    <span class="settings-section-meta">
+                        VISUAL
+                    </span>
+
+                </div>
+
+
+                <div class="settings-settings-grid">
+
+
+                    <!-- Theme -->
+                    <article class="settings-panel">
+
+                        <div class="settings-panel-header">
+
+                            <div>
+
+                                <span class="settings-panel-icon">
+                                    ◈
+                                </span>
+
+                                <h3>
+                                    Theme
+                                </h3>
+
+                            </div>
+
+                            <span class="settings-panel-caption">
+                                DARK
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Choose how the ElseWhere interface
+                            should look.
+                        </p>
+
+
+                        <div class="settings-theme-options">
+
+                            <button
+                                type="button"
+                                class="settings-theme-option active"
+                                data-theme="dark"
+                                aria-pressed="true"
+                            >
+
+                                <span class="theme-preview dark-preview">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </span>
+
+                                <strong>
+                                    Dark
+                                </strong>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="settings-theme-option"
+                                data-theme="soft"
+                                aria-pressed="false"
+                            >
+
+                                <span class="theme-preview soft-preview">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </span>
+
+                                <strong>
+                                    Soft
+                                </strong>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="settings-theme-option"
+                                data-theme="midnight"
+                                aria-pressed="false"
+                            >
+
+                                <span class="theme-preview midnight-preview">
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+                                </span>
+
+                                <strong>
+                                    Midnight
+                                </strong>
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Motion -->
+                    <article class="settings-panel">
+
+                        <div class="settings-panel-header">
+
+                            <div>
+
+                                <span class="settings-panel-icon">
+                                    ✦
+                                </span>
+
+                                <h3>
+                                    Motion
+                                </h3>
+
+                            </div>
+
+                            <span class="settings-panel-caption">
+                                ON
+                            </span>
+
+                        </div>
+
+
+                        <p>
+                            Control the ambient animations and
+                            motion throughout the interface.
+                        </p>
+
+
+                        <label class="settings-toggle-row">
+
+                            <div>
+
+                                <strong>
+                                    Ambient motion
+                                </strong>
+
+                                <small>
+                                    Floating details and subtle movement.
+                                </small>
+
+                            </div>
+
+                            <input
+                                type="checkbox"
+                                id="motionToggle"
+                                checked
+                            >
+
+                            <span class="settings-toggle">
+                                <i></i>
+                            </span>
+
+                        </label>
+
+
+                        <label class="settings-toggle-row">
+
+                            <div>
+
+                                <strong>
+                                    Hover effects
+                                </strong>
+
+                                <small>
+                                    Interactive depth and card movement.
+                                </small>
+
+                            </div>
+
+                            <input
+                                type="checkbox"
+                                id="hoverToggle"
+                                checked
+                            >
+
+                            <span class="settings-toggle">
+                                <i></i>
+                            </span>
+
+                        </label>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 NOTIFICATIONS
+            ================================================== -->
+
+            <section class="settings-section">
+
+                <div class="settings-section-heading">
+
+                    <div>
+                        <span class="settings-section-label">
+                            NOTIFICATIONS
+                        </span>
+
+                        <h2>
+                            Stay in the loop.
+                        </h2>
+                    </div>
+
+                    <span class="settings-section-meta">
+                        OPTIONAL
+                    </span>
+
+                </div>
+
+
+                <div class="settings-notification-card">
+
+                    <div class="settings-notification-intro">
+
+                        <span class="settings-notification-icon">
+                            ♢
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                ElseWhere notifications
+                            </h3>
+
+                            <p>
+                                Choose which moments deserve
+                                your attention.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="settings-notification-list">
+
+                        <label class="settings-notification-row">
+
+                            <div>
+
+                                <strong>
+                                    Memory activity
+                                </strong>
+
+                                <small>
+                                    When something changes in your
+                                    shared memories.
+                                </small>
+
+                            </div>
+
+                            <input
+                                type="checkbox"
+                                id="memoryNotifications"
+                                checked
+                            >
+
+                            <span class="settings-toggle">
+                                <i></i>
+                            </span>
+
+                        </label>
+
+
+                        <label class="settings-notification-row">
+
+                            <div>
+
+                                <strong>
+                                    Couple activity
+                                </strong>
+
+                                <small>
+                                    Important activity in your
+                                    shared space.
+                                </small>
+
+                            </div>
+
+                            <input
+                                type="checkbox"
+                                id="coupleNotifications"
+                                checked
+                            >
+
+                            <span class="settings-toggle">
+                                <i></i>
+                            </span>
+
+                        </label>
+
+
+                        <label class="settings-notification-row">
+
+                            <div>
+
+                                <strong>
+                                    New experiences
+                                </strong>
+
+                                <small>
+                                    When new Together experiences
+                                    become available.
+                                </small>
+
+                            </div>
+
+                            <input
+                                type="checkbox"
+                                id="experienceNotifications"
+                                checked
+                            >
+
+                            <span class="settings-toggle">
+                                <i></i>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 PRIVACY
+            ================================================== -->
+
+            <section class="settings-section">
+
+                <div class="settings-section-heading">
+
+                    <div>
+                        <span class="settings-section-label">
+                            PRIVACY
+                        </span>
+
+                        <h2>
+                            Your space stays yours.
+                        </h2>
+                    </div>
+
+                    <span class="settings-section-meta">
+                        IMPORTANT
+                    </span>
+
+                </div>
+
+
+                <div class="settings-privacy-grid">
+
+
+                    <!-- Private space -->
+                    <article class="settings-privacy-card">
+
+                        <div class="settings-privacy-icon">
+                            ♢
+                        </div>
+
+                        <div>
+
+                            <span>
+                                SHARED SPACE
+                            </span>
+
+                            <h3>
+                                Private by default.
+                            </h3>
+
+                            <p>
+                                Your shared content is intended
+                                for the two of you.
+                            </p>
+
+                        </div>
+
+                        <span class="settings-privacy-status">
+                            PRIVATE
+                        </span>
+
+                    </article>
+
+
+                    <!-- Data -->
+                    <article class="settings-privacy-card">
+
+                        <div class="settings-privacy-icon">
+                            ◌
+                        </div>
+
+                        <div>
+
+                            <span>
+                                YOUR DATA
+                            </span>
+
+                            <h3>
+                                You stay in control.
+                            </h3>
+
+                            <p>
+                                Data controls will be connected
+                                with the real account system.
+                            </p>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="settings-text-button"
+                            id="dataInfoButton"
+                        >
+                            Learn more
+                            <span>→</span>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 DANGER ZONE
+            ================================================== -->
+
+            <section class="settings-section settings-danger-section">
+
+                <div class="settings-section-heading">
+
+                    <div>
+                        <span class="settings-section-label settings-danger-label">
+                            ACCOUNT ACTIONS
+                        </span>
+
+                        <h2>
+                            Leave when you're ready.
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="settings-danger-card">
+
+                    <div>
+
+                        <span class="settings-danger-icon">
+                            ↪
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Sign out
+                            </h3>
+
+                            <p>
+                                Sign out of this ElseWhere session.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="settings-danger-button"
+                        id="signOutButton"
+                    >
+                        Sign out
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 SAVE BAR
+            ================================================== -->
+
+            <div
+                class="settings-save-bar"
+                id="settingsSaveBar"
+                aria-live="polite"
+            >
+
+                <div>
+
+                    <span class="settings-save-dot"></span>
+
+                    <span id="settingsSaveText">
+                        Changes are saved locally in this preview.
+                    </span>
+
+                </div>
+
+                <button
+                    type="button"
+                    id="saveSettingsButton"
+                    class="settings-save-button"
+                >
+                    Save changes
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         MODAL
+    ====================================================== -->
+
+    <div
+        class="settings-modal"
+        id="settingsModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="settings-modal-backdrop"
+            data-settings-close
+        ></div>
+
+
+        <section
+            class="settings-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="settingsModalTitle"
+        >
+
+            <button
+                type="button"
+                class="settings-modal-close"
+                id="settingsModalClose"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+
+            <div class="settings-modal-icon">
+                ⚙
+            </div>
+
+
+            <span class="settings-modal-label">
+                ElseWhere
+            </span>
+
+
+            <h2 id="settingsModalTitle">
+                Settings will connect here.
+            </h2>
+
+
+            <p id="settingsModalText">
+                The real account, privacy and preference
+                system will be connected after the frontend
+                foundation is complete.
+            </p>
+
+
+            <button
+                type="button"
+                class="settings-modal-button"
+                data-settings-close
+            >
+                Back to settings
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="settings-footer">
+
+        <div class="settings-footer-inner">
+
+            <span>
+                © 2026 ElseWhere
+            </span>
+
+            <span>
+                Your space. Your story. ♥
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="./js/global.js" defer></script>
+    <script src="./js/settings.js" defer></script>
+
+</body>
+</html>
