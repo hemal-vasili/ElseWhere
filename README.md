@@ -128,8 +128,3 @@ Made with creativity, code, and a lot of love.
 
 **ElseWhere — Your little world. Together.**
 """
-
-path = Path("/mnt/data/README.md")
-path.write_text(readme, encoding="utf-8")
-
-print(f"Created: {path}")
