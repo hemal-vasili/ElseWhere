@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Keep your favorite moments together in your private ElseWhere memories."
+    >
+
+    <title>Memories — ElseWhere</title>
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/memories.css">
+</head>
+
+<body class="memories-page">
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div
+        class="memories-background"
+        aria-hidden="true"
+    >
+        <div class="memories-bg-glow memories-bg-glow-one"></div>
+        <div class="memories-bg-glow memories-bg-glow-two"></div>
+        <div class="memories-bg-glow memories-bg-glow-three"></div>
+
+        <div class="memories-bg-grid"></div>
+        <div class="memories-bg-noise"></div>
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="memories-header"
+        id="memoriesHeader"
+    >
+
+        <div class="memories-header-inner">
+
+            <!-- Brand -->
+            <a
+                href="hub.html"
+                class="memories-brand"
+                aria-label="Back to ElseWhere home"
+            >
+
+                <span
+                    class="memories-brand-icon"
+                    aria-hidden="true"
+                >
+                    ♥
+                </span>
+
+                <span class="memories-brand-name">
+                    ElseWhere
+                </span>
+
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <nav
+                class="memories-nav"
+                aria-label="Main navigation"
+            >
+
+                <a
+                    href="hub.html"
+                    class="memories-nav-link"
+                >
+                    <span aria-hidden="true">⌂</span>
+                    Home
+                </a>
+
+                <a
+                    href="together.html"
+                    class="memories-nav-link"
+                >
+                    <span aria-hidden="true">✦</span>
+                    Together
+                </a>
+
+                <a
+                    href="memories.html"
+                    class="memories-nav-link active"
+                    aria-current="page"
+                >
+                    <span aria-hidden="true">♡</span>
+                    Memories
+                </a>
+
+                <a
+                    href="our-world.html"
+                    class="memories-nav-link"
+                >
+                    <span aria-hidden="true">⌁</span>
+                    Our World
+                </a>
+
+            </nav>
+
+
+            <!-- Header Actions -->
+            <div class="memories-header-actions">
+
+                <button
+                    type="button"
+                    class="memories-icon-button"
+                    id="memorySearchButton"
+                    aria-label="Search memories"
+                >
+                    ⌕
+                </button>
+
+
+                <a
+                    href="settings.html"
+                    class="memories-profile"
+                    aria-label="Open settings"
+                >
+
+                    <span class="memories-profile-avatar">
+                        ♥
+                    </span>
+
+                    <span class="memories-profile-name">
+                        You
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="memories-menu-button"
+                    id="memoriesMenuButton"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Navigation -->
+        <div
+            class="memories-mobile-menu"
+            id="memoriesMobileMenu"
+        >
+
+            <nav aria-label="Mobile navigation">
+
+                <a href="hub.html">
+                    <span aria-hidden="true">⌂</span>
+                    Home
+                </a>
+
+                <a href="together.html">
+                    <span aria-hidden="true">✦</span>
+                    Together
+                </a>
+
+                <a
+                    href="memories.html"
+                    class="active"
+                >
+                    <span aria-hidden="true">♡</span>
+                    Memories
+                </a>
+
+                <a href="our-world.html">
+                    <span aria-hidden="true">⌁</span>
+                    Our World
+                </a>
+
+                <a href="settings.html">
+                    <span aria-hidden="true">⚙</span>
+                    Settings
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="memories-main">
+
+        <div class="memories-container">
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <section class="memories-hero">
+
+                <div class="memories-hero-copy">
+
+                    <div class="memories-eyebrow">
+
+                        <span class="memories-eyebrow-line"></span>
+
+                        YOUR LITTLE ARCHIVE
+
+                        <span class="memories-private">
+                            PRIVATE
+                        </span>
+
+                    </div>
+
+
+                    <h1>
+                        Keep the moments
+                        <span>that matter.</span>
+                    </h1>
+
+
+                    <p>
+                        Photos, little notes, important dates and
+                        all the tiny things you don't want time
+                        to take away.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="memories-primary-button"
+                        id="addMemoryButton"
+                    >
+                        <span class="memories-button-icon">
+                            +
+                        </span>
+
+                        <span>
+                            Add a memory
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+                    </button>
+
+                </div>
+
+
+                <!-- Hero visual -->
+                <div class="memories-hero-visual">
+
+                    <div class="memory-hero-orbit orbit-one"></div>
+                    <div class="memory-hero-orbit orbit-two"></div>
+
+                    <div class="memory-hero-frame">
+
+                        <div class="memory-hero-frame-top">
+
+                            <span>
+                                OUR MEMORIES
+                            </span>
+
+                            <span>
+                                ♡
+                            </span>
+
+                        </div>
+
+
+                        <div class="memory-hero-photo">
+
+                            <div class="memory-photo-shine"></div>
+
+                            <div class="memory-photo-center">
+                                ♥
+                            </div>
+
+                            <span class="memory-photo-spark spark-one">
+                                ✦
+                            </span>
+
+                            <span class="memory-photo-spark spark-two">
+                                ·
+                            </span>
+
+                        </div>
+
+
+                        <div class="memory-hero-caption">
+
+                            <div>
+                                <span>
+                                    A MOMENT WORTH KEEPING
+                                </span>
+
+                                <strong>
+                                    Our little memories.
+                                </strong>
+                            </div>
+
+                            <span>
+                                ♡
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 MEMORY STATS
+            ================================================== -->
+
+            <section class="memory-stats">
+
+                <div class="memory-stat">
+
+                    <span class="memory-stat-icon">
+                        ♡
+                    </span>
+
+                    <div>
+                        <strong id="memoryCount">
+                            00
+                        </strong>
+
+                        <span>
+                            MEMORIES
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="memory-stat">
+
+                    <span class="memory-stat-icon">
+                        ✦
+                    </span>
+
+                    <div>
+                        <strong id="memoryPhotoCount">
+                            00
+                        </strong>
+
+                        <span>
+                            PHOTOS
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="memory-stat">
+
+                    <span class="memory-stat-icon">
+                        ◷
+                    </span>
+
+                    <div>
+                        <strong>
+                            —
+                        </strong>
+
+                        <span>
+                            DAYS TOGETHER
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <div class="memory-stat memory-stat-private">
+
+                    <span class="memory-private-dot"></span>
+
+                    <div>
+                        <strong>
+                            PRIVATE
+                        </strong>
+
+                        <span>
+                            YOUR SPACE
+                        </span>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 MEMORY TOOLBAR
+            ================================================== -->
+
+            <section class="memories-library">
+
+                <div class="memories-library-heading">
+
+                    <div>
+
+                        <span class="memories-section-label">
+                            YOUR ARCHIVE
+                        </span>
+
+                        <h2>
+                            Memories
+                        </h2>
+
+                    </div>
+
+
+                    <div class="memories-view-controls">
+
+                        <button
+                            type="button"
+                            class="memory-view-button active"
+                            id="gridViewButton"
+                            aria-label="Grid view"
+                            aria-pressed="true"
+                        >
+                            ▦
+                        </button>
+
+                        <button
+                            type="button"
+                            class="memory-view-button"
+                            id="listViewButton"
+                            aria-label="List view"
+                            aria-pressed="false"
+                        >
+                            ☷
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Filters -->
+                <div class="memories-filters">
+
+                    <button
+                        type="button"
+                        class="memory-filter active"
+                        data-filter="all"
+                    >
+                        All
+                    </button>
+
+                    <button
+                        type="button"
+                        class="memory-filter"
+                        data-filter="photos"
+                    >
+                        Photos
+                    </button>
+
+                    <button
+                        type="button"
+                        class="memory-filter"
+                        data-filter="notes"
+                    >
+                        Notes
+                    </button>
+
+                    <button
+                        type="button"
+                        class="memory-filter"
+                        data-filter="important"
+                    >
+                        Favorites
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     EMPTY STATE
+                ================================================== -->
+
+                <div
+                    class="memories-empty"
+                    id="memoriesEmpty"
+                >
+
+                    <div class="memories-empty-art">
+
+                        <div class="empty-orbit orbit-one"></div>
+                        <div class="empty-orbit orbit-two"></div>
+
+                        <div class="empty-center">
+                            ♡
+                        </div>
+
+                        <span class="empty-spark spark-one">
+                            ✦
+                        </span>
+
+                        <span class="empty-spark spark-two">
+                            ·
+                        </span>
+
+                    </div>
+
+
+                    <span class="memories-empty-label">
+                        THE FIRST PAGE IS BLANK
+                    </span>
+
+
+                    <h3>
+                        Your story starts with
+                        one little memory.
+                    </h3>
+
+
+                    <p>
+                        Add a photo, write a note or save a
+                        moment you know you'll want to remember.
+                    </p>
+
+
+                    <button
+                        type="button"
+                        class="memories-empty-button"
+                        id="emptyAddMemoryButton"
+                    >
+                        <span>
+                            Add your first memory
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     FUTURE MEMORY GRID
+                ================================================== -->
+
+                <div
+                    class="memories-grid"
+                    id="memoriesGrid"
+                    hidden
+                >
+
+                    <!-- Memory items will be inserted here -->
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 MEMORY QUOTE
+            ================================================== -->
+
+            <section class="memories-quote">
+
+                <div class="memories-quote-line"></div>
+
+                <div class="memories-quote-content">
+
+                    <span>
+                        A LITTLE REMINDER
+                    </span>
+
+                    <blockquote>
+                        “The smallest moments
+                        usually become the biggest memories.”
+                    </blockquote>
+
+                    <strong>
+                        — ElseWhere
+                    </strong>
+
+                </div>
+
+                <div class="memories-quote-heart">
+                    ♥
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         ADD MEMORY MODAL
+    ====================================================== -->
+
+    <div
+        class="memory-modal"
+        id="memoryModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="memory-modal-backdrop"
+            data-memory-close
+        ></div>
+
+
+        <section
+            class="memory-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="memoryModalTitle"
+        >
+
+            <button
+                type="button"
+                class="memory-modal-close"
+                id="memoryModalClose"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+
+            <div class="memory-modal-icon">
+                ♡
+            </div>
+
+
+            <span class="memory-modal-label">
+                ADD TO YOUR STORY
+            </span>
+
+
+            <h2 id="memoryModalTitle">
+                Save a little moment.
+            </h2>
+
+
+            <p>
+                Your memory system will be connected here.
+                You'll be able to add photos, notes and
+                moments to your private archive.
+            </p>
+
+
+            <div class="memory-modal-options">
+
+                <button
+                    type="button"
+                    class="memory-option"
+                    data-memory-type="photo"
+                >
+
+                    <span>
+                        ▣
+                    </span>
+
+                    <div>
+                        <strong>
+                            Photo
+                        </strong>
+
+                        <small>
+                            Save a picture together.
+                        </small>
+                    </div>
+
+                    <i>
+                        →
+                    </i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="memory-option"
+                    data-memory-type="note"
+                >
+
+                    <span>
+                        ✎
+                    </span>
+
+                    <div>
+                        <strong>
+                            Little note
+                        </strong>
+
+                        <small>
+                            Write something worth keeping.
+                        </small>
+                    </div>
+
+                    <i>
+                        →
+                    </i>
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="memory-option"
+                    data-memory-type="moment"
+                >
+
+                    <span>
+                        ✦
+                    </span>
+
+                    <div>
+                        <strong>
+                            Moment
+                        </strong>
+
+                        <small>
+                            Capture something special.
+                        </small>
+                    </div>
+
+                    <i>
+                        →
+                    </i>
+
+                </button>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="memory-modal-button"
+                data-memory-close
+            >
+                Back to memories
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="memories-footer">
+
+        <div class="memories-footer-inner">
+
+            <span>
+                © 2026 ElseWhere
+            </span>
+
+            <span>
+                Keep the little things. ♥
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="./js/global.js" defer></script>
+    <script src="./js/memories.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Build and personalize your shared world on ElseWhere."
+    >
+
+    <title>Our World — ElseWhere</title>
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/our-world.css">
+</head>
+
+<body class="world-page">
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <div
+        class="world-background"
+        aria-hidden="true"
+    >
+        <div class="world-bg-glow world-bg-glow-one"></div>
+        <div class="world-bg-glow world-bg-glow-two"></div>
+        <div class="world-bg-glow world-bg-glow-three"></div>
+
+        <div class="world-bg-grid"></div>
+        <div class="world-bg-noise"></div>
+    </div>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+    <header
+        class="world-header"
+        id="worldHeader"
+    >
+
+        <div class="world-header-inner">
+
+            <!-- Brand -->
+            <a
+                href="hub.html"
+                class="world-brand"
+                aria-label="Back to ElseWhere home"
+            >
+                <span
+                    class="world-brand-icon"
+                    aria-hidden="true"
+                >
+                    ♥
+                </span>
+
+                <span class="world-brand-name">
+                    ElseWhere
+                </span>
+            </a>
+
+
+            <!-- Desktop navigation -->
+            <nav
+                class="world-nav"
+                aria-label="Main navigation"
+            >
+
+                <a
+                    href="hub.html"
+                    class="world-nav-link"
+                >
+                    <span aria-hidden="true">⌂</span>
+                    Home
+                </a>
+
+                <a
+                    href="together.html"
+                    class="world-nav-link"
+                >
+                    <span aria-hidden="true">✦</span>
+                    Together
+                </a>
+
+                <a
+                    href="memories.html"
+                    class="world-nav-link"
+                >
+                    <span aria-hidden="true">♡</span>
+                    Memories
+                </a>
+
+                <a
+                    href="our-world.html"
+                    class="world-nav-link active"
+                    aria-current="page"
+                >
+                    <span aria-hidden="true">⌁</span>
+                    Our World
+                </a>
+
+            </nav>
+
+
+            <!-- Header actions -->
+            <div class="world-header-actions">
+
+                <a
+                    href="settings.html"
+                    class="world-profile"
+                    aria-label="Open settings"
+                >
+
+                    <span class="world-profile-avatar">
+                        ♥
+                    </span>
+
+                    <span class="world-profile-name">
+                        You
+                    </span>
+
+                </a>
+
+
+                <button
+                    type="button"
+                    class="world-menu-button"
+                    id="worldMenuButton"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile navigation -->
+        <div
+            class="world-mobile-menu"
+            id="worldMobileMenu"
+        >
+
+            <nav aria-label="Mobile navigation">
+
+                <a href="hub.html">
+                    <span aria-hidden="true">⌂</span>
+                    Home
+                </a>
+
+                <a href="together.html">
+                    <span aria-hidden="true">✦</span>
+                    Together
+                </a>
+
+                <a href="memories.html">
+                    <span aria-hidden="true">♡</span>
+                    Memories
+                </a>
+
+                <a
+                    href="our-world.html"
+                    class="active"
+                >
+                    <span aria-hidden="true">⌁</span>
+                    Our World
+                </a>
+
+                <a href="settings.html">
+                    <span aria-hidden="true">⚙</span>
+                    Settings
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="world-main">
+
+        <div class="world-container">
+
+
+            <!-- =================================================
+                 HERO
+            ================================================== -->
+
+            <section class="world-hero">
+
+                <div class="world-hero-copy">
+
+                    <div class="world-eyebrow">
+
+                        <span class="world-eyebrow-line"></span>
+
+                        YOUR SHARED SPACE
+
+                        <span class="world-private">
+                            PRIVATE
+                        </span>
+
+                    </div>
+
+
+                    <h1>
+                        Build a world
+                        <span>that feels like you.</span>
+                    </h1>
+
+
+                    <p>
+                        Personalize the little corner of the
+                        internet that belongs to both of you.
+                    </p>
+
+
+                    <div class="world-hero-actions">
+
+                        <button
+                            type="button"
+                            class="world-primary-button"
+                            id="customizeWorldButton"
+                        >
+                            <span>Customize our world</span>
+                            <span>→</span>
+                        </button>
+
+                        <span class="world-save-note">
+                            Changes will be saved here.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hero visual -->
+                <div class="world-hero-visual">
+
+                    <div class="world-visual-glow"></div>
+
+                    <div class="world-planet-orbit orbit-one"></div>
+                    <div class="world-planet-orbit orbit-two"></div>
+                    <div class="world-planet-orbit orbit-three"></div>
+
+
+                    <div class="world-planet">
+
+                        <div class="world-planet-highlight"></div>
+
+                        <div class="world-planet-core">
+                            ♥
+                        </div>
+
+                        <span class="world-star star-one">
+                            ✦
+                        </span>
+
+                        <span class="world-star star-two">
+                            ·
+                        </span>
+
+                        <span class="world-star star-three">
+                            ✦
+                        </span>
+
+                    </div>
+
+
+                    <div class="world-floating-tag world-tag-one">
+
+                        <span>THEME</span>
+                        <strong>Yours</strong>
+
+                    </div>
+
+
+                    <div class="world-floating-tag world-tag-two">
+
+                        <span>STATUS</span>
+                        <strong>Private</strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 WORLD PREVIEW
+            ================================================== -->
+
+            <section
+                class="world-preview-section"
+                aria-labelledby="world-preview-title"
+            >
+
+                <div class="world-section-heading">
+
+                    <div>
+
+                        <span class="world-section-label">
+                            YOUR CURRENT WORLD
+                        </span>
+
+                        <h2 id="world-preview-title">
+                            A quiet place for two.
+                        </h2>
+
+                    </div>
+
+                    <span class="world-section-meta">
+                        PREVIEW
+                    </span>
+
+                </div>
+
+
+                <div class="world-preview">
+
+                    <div class="world-preview-top">
+
+                        <div class="world-preview-brand">
+
+                            <span>♥</span>
+
+                            <strong>
+                                Our World
+                            </strong>
+
+                        </div>
+
+
+                        <span class="world-preview-private">
+                            PRIVATE
+                        </span>
+
+                    </div>
+
+
+                    <div class="world-preview-content">
+
+                        <div class="world-preview-message">
+
+                            <span>
+                                WELCOME TO
+                            </span>
+
+                            <h3>
+                                Our little world.
+                            </h3>
+
+                            <p>
+                                The details here will become
+                                yours as you build them together.
+                            </p>
+
+                        </div>
+
+
+                        <!-- Mini world -->
+                        <div class="world-mini-scene">
+
+                            <div class="mini-scene-orbit scene-orbit-one"></div>
+                            <div class="mini-scene-orbit scene-orbit-two"></div>
+
+                            <div class="mini-scene-center">
+                                ♥
+                            </div>
+
+                            <span class="mini-scene-star scene-star-one">
+                                ✦
+                            </span>
+
+                            <span class="mini-scene-star scene-star-two">
+                                ·
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="world-preview-bottom">
+
+                        <span>
+                            YOUR SPACE
+                        </span>
+
+                        <div class="world-preview-dots">
+
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 CUSTOMIZATION CARDS
+            ================================================== -->
+
+            <section
+                class="world-customization"
+                aria-labelledby="customization-title"
+            >
+
+                <div class="world-section-heading">
+
+                    <div>
+
+                        <span class="world-section-label">
+                            MAKE IT YOURS
+                        </span>
+
+                        <h2 id="customization-title">
+                            Personalize the details.
+                        </h2>
+
+                    </div>
+
+                    <span class="world-section-meta">
+                        04 AREAS
+                    </span>
+
+                </div>
+
+
+                <div class="world-option-grid">
+
+
+                    <!-- Theme -->
+                    <article class="world-option-card">
+
+                        <div class="world-option-header">
+
+                            <span class="world-option-icon">
+                                ◈
+                            </span>
+
+                            <span class="world-option-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+
+                        <div class="world-option-visual theme-visual">
+
+                            <div class="theme-swatch swatch-one"></div>
+                            <div class="theme-swatch swatch-two"></div>
+                            <div class="theme-swatch swatch-three"></div>
+
+                            <div class="theme-glow"></div>
+
+                        </div>
+
+
+                        <div class="world-option-content">
+
+                            <span>
+                                APPEARANCE
+                            </span>
+
+                            <h3>
+                                Our theme
+                            </h3>
+
+                            <p>
+                                Choose the atmosphere your
+                                shared space should have.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="world-option-button"
+                            data-world-option="theme"
+                        >
+                            Customize
+                            <span>→</span>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Couple -->
+                    <article class="world-option-card">
+
+                        <div class="world-option-header">
+
+                            <span class="world-option-icon">
+                                ♡
+                            </span>
+
+                            <span class="world-option-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+
+                        <div class="world-option-visual couple-visual">
+
+                            <div class="couple-avatar avatar-you">
+                                Y
+                            </div>
+
+                            <div class="couple-heart">
+                                ♥
+                            </div>
+
+                            <div class="couple-avatar avatar-partner">
+                                ?
+                            </div>
+
+                        </div>
+
+
+                        <div class="world-option-content">
+
+                            <span>
+                                OUR PEOPLE
+                            </span>
+
+                            <h3>
+                                Us
+                            </h3>
+
+                            <p>
+                                Add your names, photos and
+                                little details about each other.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="world-option-button"
+                            data-world-option="couple"
+                        >
+                            Customize
+                            <span>→</span>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Places -->
+                    <article class="world-option-card">
+
+                        <div class="world-option-header">
+
+                            <span class="world-option-icon">
+                                ⌖
+                            </span>
+
+                            <span class="world-option-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+
+                        <div class="world-option-visual places-visual">
+
+                            <div class="places-map-grid"></div>
+
+                            <div class="place-point point-one">
+                                <span></span>
+                            </div>
+
+                            <div class="place-point point-two">
+                                <span></span>
+                            </div>
+
+                            <div class="place-point point-three">
+                                <span></span>
+                            </div>
+
+                            <div class="place-route"></div>
+
+                        </div>
+
+
+                        <div class="world-option-content">
+
+                            <span>
+                                LITTLE PLACES
+                            </span>
+
+                            <h3>
+                                Our places
+                            </h3>
+
+                            <p>
+                                Keep track of the places,
+                                trips and spots that mean something.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="world-option-button"
+                            data-world-option="places"
+                        >
+                            Customize
+                            <span>→</span>
+                        </button>
+
+                    </article>
+
+
+                    <!-- Atmosphere -->
+                    <article class="world-option-card">
+
+                        <div class="world-option-header">
+
+                            <span class="world-option-icon">
+                                ✦
+                            </span>
+
+                            <span class="world-option-arrow">
+                                →
+                            </span>
+
+                        </div>
+
+
+                        <div class="world-option-visual atmosphere-visual">
+
+                            <div class="atmosphere-circle atmosphere-circle-one"></div>
+                            <div class="atmosphere-circle atmosphere-circle-two"></div>
+                            <div class="atmosphere-circle atmosphere-circle-three"></div>
+
+                            <div class="atmosphere-center">
+                                ♥
+                            </div>
+
+                        </div>
+
+
+                        <div class="world-option-content">
+
+                            <span>
+                                FEEL
+                            </span>
+
+                            <h3>
+                                Atmosphere
+                            </h3>
+
+                            <p>
+                                Shape the mood with ambient
+                                effects and your shared preferences.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="world-option-button"
+                            data-world-option="atmosphere"
+                        >
+                            Customize
+                            <span>→</span>
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 OUR STORY
+            ================================================== -->
+
+            <section class="world-story">
+
+                <div class="world-story-copy">
+
+                    <span class="world-section-label">
+                        MORE THAN SETTINGS
+                    </span>
+
+                    <h2>
+                        Your world should tell
+                        <span>your story.</span>
+                    </h2>
+
+                    <p>
+                        The goal isn't to fill every option.
+                        It's to slowly make this place feel
+                        familiar because the details came from you.
+                    </p>
+
+                </div>
+
+
+                <div class="world-story-visual">
+
+                    <div class="story-ring story-ring-one"></div>
+                    <div class="story-ring story-ring-two"></div>
+                    <div class="story-ring story-ring-three"></div>
+
+                    <div class="story-heart">
+                        ♥
+                    </div>
+
+                    <span class="story-label story-label-one">
+                        YOU
+                    </span>
+
+                    <span class="story-label story-label-two">
+                        ME
+                    </span>
+
+                    <span class="story-label story-label-three">
+                        US
+                    </span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         CUSTOMIZATION MODAL
+    ====================================================== -->
+
+    <div
+        class="world-modal"
+        id="worldModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="world-modal-backdrop"
+            data-world-close
+        ></div>
+
+
+        <section
+            class="world-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="worldModalTitle"
+        >
+
+            <button
+                type="button"
+                class="world-modal-close"
+                id="worldModalClose"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+
+            <div class="world-modal-icon">
+                ⌁
+            </div>
+
+
+            <span class="world-modal-label">
+                YOUR WORLD
+            </span>
+
+
+            <h2 id="worldModalTitle">
+                Make it yours.
+            </h2>
+
+
+            <p id="worldModalText">
+                World customization will be connected
+                here. Your choices will eventually shape
+                the shared space you build together.
+            </p>
+
+
+            <div class="world-modal-preview">
+
+                <span class="world-modal-preview-label">
+                    CURRENT STATE
+                </span>
+
+                <strong>
+                    Waiting for your first customization.
+                </strong>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="world-modal-button"
+                data-world-close
+            >
+                Back to our world
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="world-footer">
+
+        <div class="world-footer-inner">
+
+            <span>
+                © 2026 ElseWhere
+            </span>
+
+            <span>
+                Build something that's yours. ♥
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="./js/global.js" defer></script>
+    <script src="./js/our-world.js" defer></script>
+
+</body>
+</html>
