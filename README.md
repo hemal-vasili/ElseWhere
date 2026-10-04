@@ -1,6 +1,4 @@
-from pathlib import Path
-
-readme = """# ElseWhere
+ """# ElseWhere
 
 > **Your little world. Together.**
 
