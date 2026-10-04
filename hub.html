@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Your private Couples space — together, memories, games and your world."
+    >
+
+    <title>Your Hub — ElseWhere</title>
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/hub.css">
+</head>
+
+<body class="hub-page">
+
+    <!-- =====================================================
+         PAGE BACKGROUND
+    ====================================================== -->
+
+    <div class="hub-background" aria-hidden="true">
+        <div class="hub-background-glow hub-glow-one"></div>
+        <div class="hub-background-glow hub-glow-two"></div>
+        <div class="hub-background-glow hub-glow-three"></div>
+
+        <div class="hub-background-grid"></div>
+        <div class="hub-background-noise"></div>
+    </div>
+
+
+    <!-- =====================================================
+         APP HEADER
+    ====================================================== -->
+
+    <header class="hub-header" id="hubHeader">
+
+        <div class="hub-header-inner">
+
+            <!-- Brand -->
+            <a
+                href="hub.html"
+                class="hub-brand"
+                aria-label="ElseWhere home"
+            >
+                <span
+                    class="hub-brand-icon"
+                    aria-hidden="true"
+                >
+                    ♥
+                </span>
+
+                <span class="hub-brand-text">
+                    ElseWhere
+                </span>
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <nav
+                class="hub-nav"
+                aria-label="Main navigation"
+            >
+
+                <a
+                    href="hub.html"
+                    class="hub-nav-link active"
+                    aria-current="page"
+                >
+                    <span aria-hidden="true">⌂</span>
+                    <span>Home</span>
+                </a>
+
+                <a
+                    href="together.html"
+                    class="hub-nav-link"
+                >
+                    <span aria-hidden="true">✦</span>
+                    <span>Together</span>
+                </a>
+
+                <a
+                    href="memories.html"
+                    class="hub-nav-link"
+                >
+                    <span aria-hidden="true">♡</span>
+                    <span>Memories</span>
+                </a>
+
+                <a
+                    href="our-world.html"
+                    class="hub-nav-link"
+                >
+                    <span aria-hidden="true">⌁</span>
+                    <span>Our World</span>
+                </a>
+
+            </nav>
+
+
+            <!-- Header Actions -->
+            <div class="hub-header-actions">
+
+                <button
+                    type="button"
+                    class="hub-icon-button"
+                    id="hubNotificationButton"
+                    aria-label="Notifications"
+                >
+                    <span aria-hidden="true">♢</span>
+
+                    <span
+                        class="hub-notification-dot"
+                        aria-hidden="true"
+                    ></span>
+                </button>
+
+
+                <a
+                    href="settings.html"
+                    class="hub-profile-button"
+                    aria-label="Open settings"
+                >
+                    <span class="hub-profile-avatar">
+                        ♥
+                    </span>
+
+                    <span class="hub-profile-name">
+                        You
+                    </span>
+
+                    <span
+                        class="hub-profile-arrow"
+                        aria-hidden="true"
+                    >
+                        ˅
+                    </span>
+                </a>
+
+
+                <!-- Mobile Menu -->
+                <button
+                    type="button"
+                    class="hub-menu-button"
+                    id="hubMenuButton"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mobile Navigation -->
+        <div
+            class="hub-mobile-menu"
+            id="hubMobileMenu"
+        >
+
+            <nav aria-label="Mobile navigation">
+
+                <a
+                    href="hub.html"
+                    class="hub-mobile-link active"
+                >
+                    <span aria-hidden="true">⌂</span>
+                    Home
+                </a>
+
+                <a
+                    href="together.html"
+                    class="hub-mobile-link"
+                >
+                    <span aria-hidden="true">✦</span>
+                    Together
+                </a>
+
+                <a
+                    href="memories.html"
+                    class="hub-mobile-link"
+                >
+                    <span aria-hidden="true">♡</span>
+                    Memories
+                </a>
+
+                <a
+                    href="our-world.html"
+                    class="hub-mobile-link"
+                >
+                    <span aria-hidden="true">⌁</span>
+                    Our World
+                </a>
+
+                <a
+                    href="settings.html"
+                    class="hub-mobile-link"
+                >
+                    <span aria-hidden="true">⚙</span>
+                    Settings
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main class="hub-main">
+
+        <div class="hub-container">
+
+
+            <!-- =================================================
+                 WELCOME
+            ================================================== -->
+
+            <section class="hub-welcome">
+
+                <div class="hub-welcome-copy">
+
+                    <div class="hub-eyebrow">
+                        <span class="hub-eyebrow-line"></span>
+
+                        YOUR PRIVATE SPACE
+
+                        <span class="hub-live-pill">
+                            <span></span>
+                            PRIVATE
+                        </span>
+                    </div>
+
+
+                    <h1>
+                        Your little world
+                        <span>together.</span>
+                    </h1>
+
+
+                    <p>
+                        Everything that belongs to the two of you,
+                        in one place.
+                    </p>
+
+                </div>
+
+
+                <!-- Couple Preview -->
+                <div class="hub-couple-preview">
+
+                    <div class="hub-couple-glow"></div>
+
+                    <div class="hub-couple-person">
+
+                        <div class="hub-couple-avatar">
+                            <span>Y</span>
+                        </div>
+
+                        <span class="hub-couple-label">
+                            YOU
+                        </span>
+
+                    </div>
+
+
+                    <div class="hub-couple-heart">
+                        <span>♥</span>
+                    </div>
+
+
+                    <div class="hub-couple-person">
+
+                        <div class="hub-couple-avatar hub-avatar-partner">
+                            <span>?</span>
+                        </div>
+
+                        <span class="hub-couple-label">
+                            PARTNER
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 QUICK ACTIONS
+            ================================================== -->
+
+            <section
+                class="hub-section"
+                aria-labelledby="quick-actions-title"
+            >
+
+                <div class="hub-section-heading">
+
+                    <div>
+                        <span class="hub-section-label">
+                            START HERE
+                        </span>
+
+                        <h2 id="quick-actions-title">
+                            Your space
+                        </h2>
+                    </div>
+
+                    <span class="hub-section-caption">
+                        Made for the two of you.
+                    </span>
+
+                </div>
+
+
+                <div class="hub-action-grid">
+
+
+                    <!-- Together -->
+                    <a
+                        href="together.html"
+                        class="hub-action-card hub-action-primary"
+                    >
+
+                        <div class="hub-action-top">
+
+                            <span class="hub-action-icon">
+                                ✦
+                            </span>
+
+                            <span class="hub-action-arrow">
+                                ↗
+                            </span>
+
+                        </div>
+
+
+                        <div class="hub-action-visual hub-visual-together">
+
+                            <div class="hub-together-orbit orbit-a"></div>
+                            <div class="hub-together-orbit orbit-b"></div>
+
+                            <div class="hub-together-center">
+                                ♥
+                            </div>
+
+                            <span class="hub-together-spark spark-one">
+                                ✦
+                            </span>
+
+                            <span class="hub-together-spark spark-two">
+                                ·
+                            </span>
+
+                        </div>
+
+
+                        <div class="hub-action-content">
+
+                            <span class="hub-action-kicker">
+                                PLAY · CONNECT · LAUGH
+                            </span>
+
+                            <h3>
+                                Together
+                            </h3>
+
+                            <p>
+                                Play games, spend time and
+                                make moments with each other.
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Memories -->
+                    <a
+                        href="memories.html"
+                        class="hub-action-card"
+                    >
+
+                        <div class="hub-action-top">
+
+                            <span class="hub-action-icon">
+                                ♡
+                            </span>
+
+                            <span class="hub-action-arrow">
+                                ↗
+                            </span>
+
+                        </div>
+
+
+                        <div class="hub-action-visual hub-visual-memories">
+
+                            <div class="hub-memory-photo memory-photo-large">
+                                <span>♥</span>
+                            </div>
+
+                            <div class="hub-memory-photo memory-photo-small">
+                                <span>✦</span>
+                            </div>
+
+                            <div class="hub-memory-date">
+                                YOUR MOMENTS
+                            </div>
+
+                        </div>
+
+
+                        <div class="hub-action-content">
+
+                            <span class="hub-action-kicker">
+                                KEEP THE LITTLE THINGS
+                            </span>
+
+                            <h3>
+                                Memories
+                            </h3>
+
+                            <p>
+                                Save the moments you never want
+                                to forget.
+                            </p>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- Our World -->
+                    <a
+                        href="our-world.html"
+                        class="hub-action-card"
+                    >
+
+                        <div class="hub-action-top">
+
+                            <span class="hub-action-icon">
+                                ⌁
+                            </span>
+
+                            <span class="hub-action-arrow">
+                                ↗
+                            </span>
+
+                        </div>
+
+
+                        <div class="hub-action-visual hub-visual-world">
+
+                            <div class="hub-world-window">
+
+                                <div class="hub-world-bar">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+
+                                <div class="hub-world-map">
+
+                                    <div class="hub-world-dot dot-one"></div>
+                                    <div class="hub-world-dot dot-two"></div>
+                                    <div class="hub-world-dot dot-three"></div>
+
+                                    <div class="hub-world-route"></div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="hub-action-content">
+
+                            <span class="hub-action-kicker">
+                                BUILD YOUR WORLD
+                            </span>
+
+                            <h3>
+                                Our World
+                            </h3>
+
+                            <p>
+                                Personalize your shared space
+                                and make it feel like yours.
+                            </p>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 DASHBOARD GRID
+            ================================================== -->
+
+            <section class="hub-dashboard-grid">
+
+
+                <!-- Recent Memory -->
+                <article class="hub-dashboard-card hub-memory-dashboard">
+
+                    <div class="hub-dashboard-header">
+
+                        <div>
+
+                            <span class="hub-dashboard-label">
+                                MEMORIES
+                            </span>
+
+                            <h2>
+                                A place for your moments.
+                            </h2>
+
+                        </div>
+
+                        <a
+                            href="memories.html"
+                            class="hub-dashboard-link"
+                        >
+                            View all
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+
+                    <div class="hub-memory-preview">
+
+                        <div class="hub-memory-placeholder">
+
+                            <div class="hub-memory-placeholder-icon">
+                                ♡
+                            </div>
+
+                            <strong>
+                                Your memories will live here.
+                            </strong>
+
+                            <span>
+                                Add your first moment together.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Couple Status -->
+                <article class="hub-dashboard-card hub-status-dashboard">
+
+                    <div class="hub-dashboard-header">
+
+                        <div>
+
+                            <span class="hub-dashboard-label">
+                                YOUR SPACE
+                            </span>
+
+                            <h2>
+                                Just the two of you.
+                            </h2>
+
+                        </div>
+
+                        <span class="hub-status-badge">
+                            PRIVATE
+                        </span>
+
+                    </div>
+
+
+                    <div class="hub-status-body">
+
+                        <div class="hub-status-visual">
+
+                            <div class="hub-status-ring ring-one"></div>
+                            <div class="hub-status-ring ring-two"></div>
+
+                            <div class="hub-status-heart">
+                                ♥
+                            </div>
+
+                        </div>
+
+
+                        <div class="hub-status-copy">
+
+                            <span>
+                                COUPLE SPACE
+                            </span>
+
+                            <strong>
+                                Waiting for your partner
+                            </strong>
+
+                            <p>
+                                Once your partner joins,
+                                this becomes your shared world.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="hub-secondary-button"
+                        id="invitePartnerButton"
+                    >
+                        <span>Invite your partner</span>
+                        <span>→</span>
+                    </button>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOWER FEATURE STRIP
+            ================================================== -->
+
+            <section class="hub-lower-strip">
+
+                <div class="hub-lower-message">
+
+                    <span class="hub-section-label">
+                        SOMETHING SPECIAL
+                    </span>
+
+                    <h2>
+                        This isn't another social network.
+                    </h2>
+
+                    <p>
+                        It's a quiet little corner of the internet
+                        that belongs to both of you.
+                    </p>
+
+                </div>
+
+
+                <div class="hub-lower-heart">
+                    <span>♥</span>
+                </div>
+
+
+                <div class="hub-lower-note">
+
+                    <span class="hub-note-mark">
+                        “
+                    </span>
+
+                    <p>
+                        Make memories worth keeping.
+                    </p>
+
+                    <span class="hub-note-signature">
+                        ElseWhere
+                    </span>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="hub-footer">
+
+        <div class="hub-footer-inner">
+
+            <span>
+                © 2026 ElseWhere
+            </span>
+
+            <span>
+                Made for two. ♥
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =====================================================
+         INVITE MODAL
+    ====================================================== -->
+
+    <div
+        class="hub-modal"
+        id="inviteModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="hub-modal-backdrop"
+            data-modal-close
+        ></div>
+
+        <section
+            class="hub-modal-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="inviteModalTitle"
+        >
+
+            <button
+                type="button"
+                class="hub-modal-close"
+                id="inviteModalClose"
+                aria-label="Close invitation"
+            >
+                ×
+            </button>
+
+
+            <div class="hub-modal-icon">
+                ♥
+            </div>
+
+
+            <span class="hub-modal-label">
+                YOUR SHARED SPACE
+            </span>
+
+
+            <h2 id="inviteModalTitle">
+                Invite your person.
+            </h2>
+
+
+            <p>
+                Your invitation system will be connected here.
+                Once authentication and the couple system are
+                connected, you'll be able to invite your partner
+                securely.
+            </p>
+
+
+            <div class="hub-modal-placeholder">
+                <span>INVITATION</span>
+
+                <strong>
+                    Coming with account connection
+                </strong>
+            </div>
+
+
+            <button
+                type="button"
+                class="hub-modal-button"
+                data-modal-close
+            >
+                Got it
+            </button>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="./js/global.js" defer></script>
+    <script src="./js/hub.js" defer></script>
+
+</body>
+</html>
