@@ -1,0 +1,2732 @@
+/* =========================================================
+   COUPLESHUB — MEMORIES
+   Private memories / archive
+========================================================= */
+
+:root {
+    --mem-bg: #09080d;
+    --mem-surface: rgba(24, 20, 30, 0.84);
+    --mem-surface-soft: rgba(255, 255, 255, 0.025);
+
+    --mem-text: #f7f1f4;
+    --mem-text-soft: #b9b0b8;
+    --mem-text-muted: #756e77;
+    --mem-text-faint: #514b54;
+
+    --mem-pink: #ed8ca9;
+    --mem-pink-light: #ffb5c9;
+    --mem-pink-dark: #ad5476;
+
+    --mem-purple: #9d7cad;
+    --mem-green: #8ed9af;
+
+    --mem-border: rgba(255, 255, 255, 0.075);
+    --mem-border-light: rgba(255, 255, 255, 0.05);
+
+    --mem-radius-xl: 30px;
+    --mem-radius-lg: 23px;
+    --mem-radius-md: 17px;
+    --mem-radius-sm: 12px;
+
+    --mem-shadow:
+        0 30px 85px rgba(0, 0, 0, 0.38),
+        0 10px 30px rgba(0, 0, 0, 0.17);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.memories-page {
+    min-height: 100vh;
+
+    color: var(--mem-text);
+
+    background:
+        radial-gradient(
+            circle at 78% 9%,
+            rgba(194, 74, 113, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 6% 58%,
+            rgba(112, 76, 139, 0.08),
+            transparent 30%
+        ),
+        var(--mem-bg);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND
+========================================================= */
+
+.memories-background {
+    position: fixed;
+    inset: 0;
+
+    z-index: 0;
+
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.memories-bg-glow {
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(105px);
+
+    opacity: 0.42;
+
+    animation:
+        memories-glow-drift 15s ease-in-out infinite;
+}
+
+.memories-bg-glow-one {
+    width: 510px;
+    height: 510px;
+
+    top: -250px;
+    right: -100px;
+
+    background: rgba(200, 74, 116, 0.16);
+}
+
+.memories-bg-glow-two {
+    width: 470px;
+    height: 470px;
+
+    left: -190px;
+    top: 39%;
+
+    background: rgba(114, 77, 141, 0.11);
+
+    animation-delay: -5s;
+}
+
+.memories-bg-glow-three {
+    width: 390px;
+    height: 390px;
+
+    right: 18%;
+    bottom: -250px;
+
+    background: rgba(194, 83, 123, 0.07);
+
+    animation-delay: -9s;
+}
+
+@keyframes memories-glow-drift {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(17px, -15px, 0) scale(1.05);
+    }
+}
+
+.memories-bg-grid {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px
+        );
+
+    background-size: 74px 74px;
+
+    mask-image:
+        radial-gradient(
+            ellipse at center top,
+            black 0%,
+            transparent 80%
+        );
+
+    opacity: 0.40;
+}
+
+.memories-bg-noise {
+    position: absolute;
+    inset: 0;
+
+    opacity: 0.024;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='memoryNoise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23memoryNoise)' opacity='.7'/%3E%3C/svg%3E");
+
+    mix-blend-mode: soft-light;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.memories-header {
+    position: sticky;
+    top: 0;
+
+    z-index: 50;
+
+    width: 100%;
+
+    border-bottom: 1px solid transparent;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(9, 8, 13, 0.92),
+            rgba(9, 8, 13, 0.72)
+        );
+
+    backdrop-filter: blur(24px);
+
+    transition:
+        border-color 220ms ease,
+        background 220ms ease,
+        box-shadow 220ms ease;
+}
+
+.memories-header.scrolled,
+.memories-header.is-scrolled {
+    border-bottom-color: rgba(255, 255, 255, 0.055);
+
+    background:
+        rgba(9, 8, 13, 0.86);
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
+.memories-header-inner {
+    width: min(1420px, calc(100% - 64px));
+
+    min-height: 78px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.memories-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    flex-shrink: 0;
+
+    color: inherit;
+    text-decoration: none;
+}
+
+.memories-brand-icon {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255, 177, 199, 0.18);
+    border-radius: 12px;
+
+    color: var(--mem-pink-light);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(236, 137, 166, 0.17),
+            rgba(117, 52, 82, 0.09)
+        );
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.07),
+        0 8px 24px rgba(177, 66, 106, 0.10);
+
+    font-size: 15px;
+
+    transition:
+        transform 220ms ease,
+        border-color 220ms ease;
+}
+
+.memories-brand:hover .memories-brand-icon {
+    transform:
+        rotate(-6deg)
+        scale(1.04);
+
+    border-color:
+        rgba(255, 177, 199, 0.30);
+}
+
+.memories-brand-name {
+    color: #f2ebef;
+
+    font-size: 17px;
+    font-weight: 700;
+
+    letter-spacing: -0.035em;
+}
+
+.memories-brand-name span {
+    color: var(--mem-pink-light);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.memories-nav {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    margin-left: clamp(48px, 7vw, 105px);
+}
+
+.memories-nav-link {
+    position: relative;
+
+    min-height: 42px;
+
+    padding: 0 14px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 11px;
+
+    color: var(--mem-text-muted);
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    transition:
+        color 180ms ease,
+        background 180ms ease;
+}
+
+.memories-nav-link span {
+    font-size: 12px;
+}
+
+.memories-nav-link:hover {
+    color: var(--mem-text-soft);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+}
+
+.memories-nav-link.active {
+    color: #f4e9ee;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(226, 126, 155, 0.10),
+            rgba(255, 255, 255, 0.025)
+        );
+}
+
+.memories-nav-link.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 4px;
+
+    width: 15px;
+    height: 2px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 999px;
+
+    background:
+        var(--mem-pink);
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.memories-header-actions {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.memories-icon-button {
+    width: 39px;
+    height: 39px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.065);
+
+    border-radius: 11px;
+
+    color: var(--mem-text-muted);
+
+    background:
+        rgba(255, 255, 255, 0.022);
+
+    font: inherit;
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        color 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.memories-icon-button:hover {
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border-color:
+        rgba(255, 255, 255, 0.11);
+
+    transform:
+        translateY(-1px);
+}
+
+.memories-profile {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 4px 8px 4px 5px;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    color: var(--mem-text-soft);
+    text-decoration: none;
+
+    transition:
+        background 180ms ease,
+        border-color 180ms ease;
+}
+
+.memories-profile:hover {
+    border-color:
+        rgba(255, 255, 255, 0.07);
+
+    background:
+        rgba(255, 255, 255, 0.028);
+}
+
+.memories-profile-avatar {
+    width: 30px;
+    height: 30px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255, 177, 199, 0.14);
+
+    border-radius: 9px;
+
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(215, 94, 130, 0.08);
+
+    font-size: 11px;
+}
+
+.memories-profile-name {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.memories-menu-button {
+    display: none;
+
+    width: 39px;
+    height: 39px;
+
+    padding: 9px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    cursor: pointer;
+}
+
+.memories-menu-button span {
+    display: block;
+
+    width: 100%;
+    height: 1.5px;
+
+    margin: 4px 0;
+
+    border-radius: 999px;
+
+    background: #dcd3d8;
+
+    transition:
+        transform 200ms ease,
+        opacity 200ms ease;
+}
+
+.memories-menu-button.active span:nth-child(1) {
+    transform:
+        translateY(5.5px)
+        rotate(45deg);
+}
+
+.memories-menu-button.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.memories-menu-button.active span:nth-child(3) {
+    transform:
+        translateY(-5.5px)
+        rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.memories-mobile-menu {
+    display: none;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.05);
+
+    background:
+        rgba(10, 9, 14, 0.97);
+
+    backdrop-filter: blur(25px);
+}
+
+.memories-mobile-menu nav {
+    width: min(100% - 32px, 560px);
+
+    margin: 0 auto;
+
+    padding: 12px 0 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.memories-mobile-menu a {
+    min-height: 48px;
+
+    padding: 0 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    border-radius: 12px;
+
+    color: var(--mem-text-muted);
+    text-decoration: none;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition:
+        color 160ms ease,
+        background 160ms ease;
+}
+
+.memories-mobile-menu a span {
+    font-size: 12px;
+}
+
+.memories-mobile-menu a:hover,
+.memories-mobile-menu a.active {
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.memories-main {
+    position: relative;
+    z-index: 2;
+}
+
+.memories-container {
+    width: min(1420px, calc(100% - 64px));
+
+    margin: 0 auto;
+
+    padding: 60px 0 75px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.memories-hero {
+    position: relative;
+
+    min-height: 390px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        460px;
+
+    align-items: center;
+
+    gap: 55px;
+
+    padding: 5px 22px 42px;
+}
+
+.memories-hero-copy {
+    position: relative;
+    z-index: 3;
+}
+
+.memories-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--mem-pink-light);
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+}
+
+.memories-eyebrow-line {
+    width: 27px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--mem-pink)
+        );
+}
+
+.memories-private {
+    margin-left: 4px;
+
+    padding: 5px 8px;
+
+    border:
+        1px solid rgba(255, 176, 198, 0.11);
+
+    border-radius: 999px;
+
+    color: #9d7e89;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+
+    font-size: 6px;
+
+    letter-spacing: 0.14em;
+}
+
+.memories-hero h1 {
+    max-width: 790px;
+
+    margin: 17px 0 14px;
+
+    color: #f8f2f5;
+
+    font-size:
+        clamp(47px, 5.9vw, 76px);
+
+    line-height: 0.96;
+
+    letter-spacing: -0.063em;
+
+    font-weight: 700;
+}
+
+.memories-hero h1 span {
+    display: block;
+
+    color: var(--mem-pink-light);
+
+    background:
+        linear-gradient(
+            120deg,
+            #fff0f4 0%,
+            #ffadc3 51%,
+            #dc7897 100%
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.memories-hero-copy > p {
+    max-width: 550px;
+
+    margin: 0;
+
+    color: var(--mem-text-soft);
+
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   HERO BUTTON
+========================================================= */
+
+.memories-primary-button {
+    position: relative;
+
+    min-height: 49px;
+
+    margin-top: 25px;
+
+    padding: 0 15px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    border:
+        1px solid rgba(255, 180, 200, 0.15);
+
+    border-radius: 12px;
+
+    color: #fff4f7;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d97b9b,
+            #b85c7d
+        );
+
+    box-shadow:
+        0 14px 30px rgba(165, 66, 103, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.17);
+
+    font: inherit;
+    font-size: 9px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        transform 180ms ease,
+        filter 180ms ease,
+        box-shadow 180ms ease;
+}
+
+.memories-primary-button::before {
+    content: "";
+
+    position: absolute;
+
+    left: -65px;
+    top: 0;
+
+    width: 55px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.19),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left 600ms ease;
+}
+
+.memories-primary-button:hover {
+    transform:
+        translateY(-2px);
+
+    filter:
+        brightness(1.05);
+
+    box-shadow:
+        0 18px 36px rgba(165, 66, 103, 0.26),
+        inset 0 1px 0 rgba(255, 255, 255, 0.20);
+}
+
+.memories-primary-button:hover::before {
+    left: calc(100% + 70px);
+}
+
+.memories-primary-button:active {
+    transform:
+        translateY(0);
+}
+
+.memories-button-icon {
+    width: 18px;
+    height: 18px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 6px;
+
+    background:
+        rgba(255, 255, 255, 0.095);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+========================================================= */
+
+.memories-hero-visual {
+    position: relative;
+
+    width: 460px;
+    height: 345px;
+
+    display: grid;
+    place-items: center;
+
+    isolation: isolate;
+}
+
+.memories-hero-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(219, 103, 141, 0.12),
+            transparent 68%
+        );
+
+    filter: blur(12px);
+}
+
+.memory-hero-orbit {
+    position: absolute;
+
+    border:
+        1px solid rgba(255, 180, 200, 0.075);
+
+    border-radius: 50%;
+}
+
+.memory-hero-orbit.orbit-one {
+    width: 375px;
+    height: 205px;
+
+    transform:
+        rotate(-15deg);
+}
+
+.memory-hero-orbit.orbit-two {
+    width: 300px;
+    height: 154px;
+
+    transform:
+        rotate(23deg);
+
+    border-style: dashed;
+}
+
+
+/* =========================================================
+   HERO FRAME
+========================================================= */
+
+.memory-hero-frame {
+    position: relative;
+    z-index: 3;
+
+    width: min(100%, 385px);
+
+    padding: 13px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.095);
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(32, 27, 39, 0.96),
+            rgba(15, 13, 20, 0.96)
+        );
+
+    box-shadow:
+        0 30px 75px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.055);
+
+    transform:
+        perspective(1200px)
+        rotateY(-5deg)
+        rotateX(2deg);
+
+    transition:
+        transform 380ms ease,
+        border-color 260ms ease;
+}
+
+.memory-hero-frame:hover {
+    transform:
+        perspective(1200px)
+        rotateY(-1deg)
+        rotateX(0deg)
+        translateY(-5px);
+
+    border-color:
+        rgba(255, 176, 198, 0.14);
+}
+
+.memory-hero-frame-top {
+    min-height: 29px;
+
+    padding: 0 4px 9px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #736b74;
+
+    font-size: 6px;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+.memory-hero-frame-top span:last-child {
+    color: var(--mem-pink-light);
+
+    font-size: 11px;
+}
+
+.memory-hero-photo {
+    position: relative;
+
+    height: 220px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.055);
+
+    border-radius: 15px;
+
+    background:
+        radial-gradient(
+            circle at 32% 25%,
+            rgba(255, 177, 199, 0.17),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 74% 65%,
+            rgba(143, 103, 159, 0.10),
+            transparent 29%
+        ),
+        linear-gradient(
+            145deg,
+            #2b2029,
+            #100d14
+        );
+
+    overflow: hidden;
+}
+
+.memory-photo-shine {
+    position: absolute;
+
+    top: -65%;
+    left: -18%;
+
+    width: 72%;
+    height: 170%;
+
+    background:
+        linear-gradient(
+            115deg,
+            transparent 35%,
+            rgba(255, 255, 255, 0.04) 50%,
+            transparent 64%
+        );
+
+    transform:
+        rotate(5deg);
+
+    animation:
+        memory-photo-shine 8s ease-in-out infinite;
+}
+
+@keyframes memory-photo-shine {
+    0%,
+    45%,
+    100% {
+        transform:
+            translateX(-12%)
+            rotate(5deg);
+        opacity: 0;
+    }
+
+    55% {
+        transform:
+            translateX(75%)
+            rotate(5deg);
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0;
+    }
+}
+
+.memory-photo-center {
+    position: relative;
+    z-index: 3;
+
+    width: 69px;
+    height: 69px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255, 187, 206, 0.16);
+
+    border-radius: 22px;
+
+    color: var(--mem-pink-light);
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(255, 198, 213, 0.15),
+            rgba(190, 73, 111, 0.07)
+        );
+
+    box-shadow:
+        0 22px 50px rgba(172, 64, 103, 0.14);
+
+    font-size: 21px;
+}
+
+.memory-photo-spark {
+    position: absolute;
+    z-index: 4;
+
+    color: var(--mem-pink-light);
+}
+
+.memory-photo-spark.spark-one {
+    right: 22%;
+    top: 21%;
+
+    font-size: 10px;
+}
+
+.memory-photo-spark.spark-two {
+    left: 22%;
+    bottom: 21%;
+
+    color: var(--mem-purple);
+
+    font-size: 18px;
+}
+
+.memory-hero-caption {
+    min-height: 44px;
+
+    padding: 11px 3px 2px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.memory-hero-caption > div span {
+    display: block;
+
+    color: var(--mem-text-faint);
+
+    font-size: 6px;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+.memory-hero-caption > div strong {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #d8cfd5;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.memory-hero-caption > span {
+    color: var(--mem-pink);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   MEMORY STATS
+========================================================= */
+
+.memory-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 10px;
+
+    margin-top: 5px;
+
+    padding: 0 22px;
+}
+
+.memory-stat {
+    min-height: 83px;
+
+    padding: 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    border:
+        1px solid var(--mem-border);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+
+    transition:
+        transform 200ms ease,
+        border-color 200ms ease,
+        background 200ms ease;
+}
+
+.memory-stat:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(255, 176, 198, 0.105);
+
+    background:
+        rgba(255, 255, 255, 0.028);
+}
+
+.memory-stat-icon {
+    width: 33px;
+    height: 33px;
+
+    flex: 0 0 auto;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255, 176, 198, 0.10);
+
+    border-radius: 10px;
+
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(237, 142, 170, 0.04);
+
+    font-size: 12px;
+}
+
+.memory-stat strong {
+    display: block;
+
+    color: #ded6db;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    letter-spacing: -0.025em;
+}
+
+.memory-stat div > span:last-child {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--mem-text-faint);
+
+    font-size: 6px;
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+}
+
+.memory-stat-private {
+    border-color:
+        rgba(143, 217, 175, 0.08);
+}
+
+.memory-private-dot {
+    width: 7px;
+    height: 7px;
+
+    flex: 0 0 auto;
+
+    margin-left: 4px;
+
+    border-radius: 50%;
+
+    background:
+        var(--mem-green);
+
+    box-shadow:
+        0 0 0 4px rgba(142, 217, 175, 0.06);
+}
+
+
+/* =========================================================
+   LIBRARY
+========================================================= */
+
+.memories-library {
+    margin-top: 64px;
+
+    padding: 0 22px;
+}
+
+.memories-library-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.memories-section-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--mem-pink-light);
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 0.17em;
+}
+
+.memories-library-heading h2 {
+    margin: 0;
+
+    color: #eee7eb;
+
+    font-size: 27px;
+
+    letter-spacing: -0.045em;
+}
+
+.memories-view-controls {
+    display: flex;
+    gap: 4px;
+
+    padding: 3px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.055);
+
+    border-radius: 11px;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+}
+
+.memory-view-button {
+    width: 34px;
+    height: 32px;
+
+    display: grid;
+    place-items: center;
+
+    border: 0;
+    border-radius: 8px;
+
+    color: var(--mem-text-faint);
+
+    background: transparent;
+
+    font: inherit;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    transition:
+        color 160ms ease,
+        background 160ms ease;
+}
+
+.memory-view-button:hover {
+    color: var(--mem-text-soft);
+}
+
+.memory-view-button.active {
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(237, 142, 170, 0.07);
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.memories-filters {
+    margin-top: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.memory-filter {
+    min-height: 34px;
+
+    padding: 0 12px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 999px;
+
+    color: var(--mem-text-muted);
+
+    background:
+        rgba(255, 255, 255, 0.018);
+
+    font: inherit;
+    font-size: 8px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 160ms ease,
+        background 160ms ease,
+        border-color 160ms ease;
+}
+
+.memory-filter:hover {
+    color: var(--mem-text-soft);
+
+    background:
+        rgba(255, 255, 255, 0.035);
+}
+
+.memory-filter.active {
+    border-color:
+        rgba(255, 176, 198, 0.09);
+
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(237, 142, 170, 0.06);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.memories-empty {
+    min-height: 410px;
+
+    margin-top: 14px;
+
+    padding: 40px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    border:
+        1px dashed rgba(255, 255, 255, 0.075);
+
+    border-radius: 23px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(204, 85, 125, 0.04),
+            transparent 44%
+        ),
+        rgba(255, 255, 255, 0.012);
+}
+
+.memories-empty-art {
+    position: relative;
+
+    width: 155px;
+    height: 125px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 20px;
+}
+
+.empty-orbit {
+    position: absolute;
+
+    border:
+        1px solid rgba(255, 176, 198, 0.075);
+
+    border-radius: 50%;
+}
+
+.empty-orbit.orbit-one {
+    width: 150px;
+    height: 67px;
+
+    transform:
+        rotate(-18deg);
+}
+
+.empty-orbit.orbit-two {
+    width: 115px;
+    height: 52px;
+
+    transform:
+        rotate(31deg);
+
+    border-style: dashed;
+}
+
+.empty-center {
+    position: relative;
+    z-index: 4;
+
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255, 181, 201, 0.13);
+
+    border-radius: 17px;
+
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(221, 105, 143, 0.055);
+
+    box-shadow:
+        0 15px 35px rgba(170, 65, 104, 0.11);
+
+    font-size: 17px;
+
+    animation:
+        memories-empty-float 4.4s ease-in-out infinite;
+}
+
+@keyframes memories-empty-float {
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-5px);
+    }
+}
+
+.empty-spark {
+    position: absolute;
+    z-index: 5;
+
+    color: var(--mem-pink-light);
+}
+
+.empty-spark.spark-one {
+    right: 16%;
+    top: 19%;
+
+    font-size: 9px;
+}
+
+.empty-spark.spark-two {
+    left: 17%;
+    bottom: 17%;
+
+    color: var(--mem-purple);
+
+    font-size: 17px;
+}
+
+.memories-empty-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--mem-pink-light);
+
+    font-size: 7px;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+.memories-empty h3 {
+    max-width: 450px;
+
+    margin: 0;
+
+    color: #ded6db;
+
+    font-size: 23px;
+    line-height: 1.12;
+
+    letter-spacing: -0.04em;
+}
+
+.memories-empty > p {
+    max-width: 470px;
+
+    margin: 10px 0 0;
+
+    color: var(--mem-text-muted);
+
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.memories-empty-button {
+    min-height: 44px;
+
+    margin-top: 20px;
+
+    padding: 0 14px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    border:
+        1px solid rgba(255, 176, 198, 0.12);
+
+    border-radius: 11px;
+
+    color: #eadfe4;
+
+    background:
+        rgba(237, 142, 170, 0.045);
+
+    font: inherit;
+    font-size: 8px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease,
+        background 180ms ease;
+}
+
+.memories-empty-button:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(255, 176, 198, 0.18);
+
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(237, 142, 170, 0.065);
+}
+
+.memories-grid[hidden] {
+    display: none;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.memories-quote {
+    position: relative;
+
+    min-height: 240px;
+
+    margin-top: 62px;
+
+    padding: 35px 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        7px
+        minmax(0, 1fr)
+        100px;
+
+    align-items: center;
+
+    gap: 30px;
+
+    border:
+        1px solid var(--mem-border);
+
+    border-radius:
+        var(--mem-radius-lg);
+
+    background:
+        radial-gradient(
+            circle at 80% 50%,
+            rgba(208, 85, 126, 0.055),
+            transparent 28%
+        ),
+        rgba(17, 15, 22, 0.78);
+
+    overflow: hidden;
+}
+
+.memories-quote-line {
+    width: 2px;
+    height: 120px;
+
+    justify-self: center;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(237, 142, 170, 0.55),
+            transparent
+        );
+}
+
+.memories-quote-content > span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--mem-pink-light);
+
+    font-size: 7px;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+.memories-quote-content blockquote {
+    max-width: 710px;
+
+    margin: 0;
+
+    color: #ddd4da;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(21px, 2.4vw, 29px);
+    line-height: 1.32;
+
+    letter-spacing: -0.015em;
+}
+
+.memories-quote-content strong {
+    display: block;
+
+    margin-top: 12px;
+
+    color: var(--mem-text-faint);
+
+    font-size: 8px;
+    font-weight: 600;
+}
+
+.memories-quote-heart {
+    width: 82px;
+    height: 82px;
+
+    justify-self: center;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255, 176, 198, 0.10);
+
+    border-radius: 50%;
+
+    color: var(--mem-pink-light);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(237, 142, 170, 0.09),
+            transparent 68%
+        );
+
+    box-shadow:
+        0 20px 45px rgba(171, 63, 102, 0.10);
+
+    font-size: 21px;
+
+    animation:
+        memories-quote-heart 4s ease-in-out infinite;
+}
+
+@keyframes memories-quote-heart {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.06);
+    }
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.memories-footer {
+    position: relative;
+    z-index: 2;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.045);
+}
+
+.memories-footer-inner {
+    width: min(1420px, calc(100% - 64px));
+
+    min-height: 74px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: var(--mem-text-faint);
+
+    font-size: 8px;
+}
+
+.memories-footer-inner span:last-child {
+    color: #68616a;
+}
+
+
+/* =========================================================
+   ADD MEMORY MODAL
+========================================================= */
+
+.memory-modal {
+    position: fixed;
+    inset: 0;
+
+    z-index: 100;
+
+    display: grid;
+    place-items: center;
+
+    padding: 22px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 220ms ease,
+        visibility 220ms ease;
+}
+
+.memory-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.memory-modal-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background:
+        rgba(4, 3, 7, 0.74);
+
+    backdrop-filter: blur(9px);
+}
+
+.memory-modal-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(100%, 490px);
+
+    padding: 34px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(30, 26, 38, 0.98),
+            rgba(15, 13, 20, 0.98)
+        );
+
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.53),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    transform:
+        translateY(15px)
+        scale(0.98);
+
+    transition:
+        transform 270ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.memory-modal.is-open .memory-modal-card {
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+.memory-modal-close {
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    width: 34px;
+    height: 34px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 10px;
+
+    color: var(--mem-text-muted);
+
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    font: inherit;
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition:
+        color 160ms ease,
+        background 160ms ease;
+}
+
+.memory-modal-close:hover {
+    color: var(--mem-text);
+
+    background:
+        rgba(255, 255, 255, 0.05);
+}
+
+.memory-modal-icon {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 17px;
+
+    border:
+        1px solid rgba(255, 176, 198, 0.13);
+
+    border-radius: 13px;
+
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(224, 106, 143, 0.055);
+
+    font-size: 16px;
+}
+
+.memory-modal-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--mem-pink-light);
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 0.16em;
+}
+
+.memory-modal-card h2 {
+    margin: 0;
+
+    color: #efe7eb;
+
+    font-size: 28px;
+
+    letter-spacing: -0.045em;
+}
+
+.memory-modal-card > p {
+    margin: 11px 0 0;
+
+    color: var(--mem-text-muted);
+
+    font-size: 10px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   MEMORY OPTIONS
+========================================================= */
+
+.memory-modal-options {
+    margin-top: 21px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.memory-option {
+    width: 100%;
+    min-height: 65px;
+
+    padding: 10px 12px;
+
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    align-items: center;
+
+    gap: 11px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.055);
+
+    border-radius: 13px;
+
+    color: inherit;
+
+    background:
+        rgba(255, 255, 255, 0.018);
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        background 180ms ease;
+}
+
+.memory-option:hover {
+    transform:
+        translateX(3px);
+
+    border-color:
+        rgba(255, 176, 198, 0.12);
+
+    background:
+        rgba(237, 142, 170, 0.035);
+}
+
+.memory-option > span {
+    width: 36px;
+    height: 36px;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255, 176, 198, 0.09);
+
+    border-radius: 10px;
+
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(237, 142, 170, 0.035);
+
+    font-size: 12px;
+}
+
+.memory-option strong {
+    display: block;
+
+    color: #d8cfd5;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.memory-option small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--mem-text-faint);
+
+    font-size: 8px;
+    line-height: 1.35;
+}
+
+.memory-option i {
+    color: var(--mem-text-faint);
+
+    font-style: normal;
+
+    font-size: 14px;
+
+    transition:
+        color 160ms ease,
+        transform 160ms ease;
+}
+
+.memory-option:hover i {
+    color: var(--mem-pink-light);
+
+    transform:
+        translateX(2px);
+}
+
+.memory-modal-button {
+    width: 100%;
+    min-height: 47px;
+
+    margin-top: 14px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.07);
+
+    border-radius: 12px;
+
+    color: #bcb2b9;
+
+    background:
+        rgba(255, 255, 255, 0.022);
+
+    font: inherit;
+    font-size: 9px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 160ms ease,
+        background 160ms ease;
+}
+
+.memory-modal-button:hover {
+    color: var(--mem-text);
+
+    background:
+        rgba(255, 255, 255, 0.045);
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.memories-brand:focus-visible,
+.memories-nav-link:focus-visible,
+.memories-icon-button:focus-visible,
+.memories-profile:focus-visible,
+.memories-menu-button:focus-visible,
+.memories-primary-button:focus-visible,
+.memory-view-button:focus-visible,
+.memory-filter:focus-visible,
+.memories-empty-button:focus-visible,
+.memory-modal-close:focus-visible,
+.memory-option:focus-visible,
+.memory-modal-button:focus-visible {
+    outline:
+        2px solid rgba(255, 176, 198, 0.55);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1200
+========================================================= */
+
+@media (max-width: 1200px) {
+    .memories-hero {
+        grid-template-columns:
+            minmax(0, 1fr)
+            390px;
+    }
+
+    .memories-hero-visual {
+        width: 390px;
+    }
+
+    .memory-hero-orbit.orbit-one {
+        width: 325px;
+        height: 177px;
+    }
+
+    .memory-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 980
+========================================================= */
+
+@media (max-width: 980px) {
+    .memories-header-inner,
+    .memories-container,
+    .memories-footer-inner {
+        width: min(100% - 40px, 760px);
+    }
+
+    .memories-nav {
+        margin-left: 35px;
+    }
+
+    .memories-hero {
+        grid-template-columns: 1fr;
+
+        padding-left: 0;
+        padding-right: 0;
+
+        gap: 35px;
+    }
+
+    .memories-hero-copy {
+        text-align: center;
+    }
+
+    .memories-eyebrow {
+        justify-content: center;
+    }
+
+    .memories-hero h1,
+    .memories-hero-copy > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .memories-hero-visual {
+        width: min(100%, 460px);
+
+        margin: 0 auto;
+    }
+
+    .memories-library,
+    .memory-stats {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .memories-quote {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 760
+========================================================= */
+
+@media (max-width: 760px) {
+    .memories-header-inner,
+    .memories-container,
+    .memories-footer-inner {
+        width: min(100% - 28px, 570px);
+    }
+
+    .memories-header-inner {
+        min-height: 68px;
+    }
+
+    .memories-nav {
+        display: none;
+    }
+
+    .memories-menu-button {
+        display: block;
+    }
+
+    .memories-mobile-menu.is-open {
+        display: block;
+    }
+
+    .memories-container {
+        padding-top: 34px;
+        padding-bottom: 55px;
+    }
+
+    .memories-hero {
+        min-height: auto;
+
+        padding-top: 15px;
+        padding-bottom: 24px;
+    }
+
+    .memories-hero h1 {
+        font-size:
+            clamp(42px, 11vw, 59px);
+    }
+
+    .memories-hero-copy > p {
+        font-size: 11px;
+    }
+
+    .memories-primary-button {
+        width: 100%;
+    }
+
+    .memories-hero-visual {
+        height: 310px;
+    }
+
+    .memory-stats {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .memories-library {
+        margin-top: 50px;
+    }
+
+    .memories-quote {
+        grid-template-columns: 4px 1fr;
+
+        margin-top: 50px;
+
+        padding: 29px 25px;
+    }
+
+    .memories-quote-heart {
+        display: none;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 520
+========================================================= */
+
+@media (max-width: 520px) {
+    .memories-profile-name {
+        display: none;
+    }
+
+    .memories-profile {
+        padding-right: 4px;
+    }
+
+    .memories-eyebrow {
+        flex-wrap: wrap;
+
+        row-gap: 8px;
+
+        font-size: 7px;
+    }
+
+    .memories-private {
+        margin-left: 0;
+    }
+
+    .memories-hero h1 {
+        font-size: 40px;
+    }
+
+    .memories-hero-visual {
+        width: 100%;
+        height: 255px;
+    }
+
+    .memory-hero-orbit.orbit-one {
+        width: 275px;
+        height: 125px;
+    }
+
+    .memory-hero-orbit.orbit-two {
+        width: 225px;
+        height: 105px;
+    }
+
+    .memory-hero-frame {
+        width: min(100%, 335px);
+
+        padding: 10px;
+
+        border-radius: 18px;
+    }
+
+    .memory-hero-photo {
+        height: 170px;
+    }
+
+    .memory-photo-center {
+        width: 56px;
+        height: 56px;
+
+        border-radius: 17px;
+
+        font-size: 18px;
+    }
+
+    .memory-stats {
+        gap: 7px;
+    }
+
+    .memory-stat {
+        min-height: 74px;
+
+        padding: 10px;
+
+        gap: 8px;
+
+        border-radius: 13px;
+    }
+
+    .memory-stat-icon {
+        width: 29px;
+        height: 29px;
+
+        border-radius: 9px;
+    }
+
+    .memory-stat strong {
+        font-size: 12px;
+    }
+
+    .memories-library-heading {
+        align-items: center;
+    }
+
+    .memories-library-heading h2 {
+        font-size: 24px;
+    }
+
+    .memories-filters {
+        overflow-x: auto;
+
+        padding-bottom: 4px;
+
+        scrollbar-width: none;
+    }
+
+    .memories-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .memory-filter {
+        flex: 0 0 auto;
+    }
+
+    .memories-empty {
+        min-height: 390px;
+
+        padding:
+            35px 18px;
+    }
+
+    .memories-empty h3 {
+        font-size: 21px;
+    }
+
+    .memories-empty > p {
+        font-size: 9px;
+    }
+
+    .memories-quote {
+        padding:
+            27px 20px;
+    }
+
+    .memories-quote-content blockquote {
+        font-size: 20px;
+    }
+
+    .memory-modal-card {
+        padding:
+            27px 20px 21px;
+
+        border-radius: 21px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 380
+========================================================= */
+
+@media (max-width: 380px) {
+    .memories-icon-button {
+        display: none;
+    }
+
+    .memories-hero h1 {
+        font-size: 36px;
+    }
+
+    .memory-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-stat-private {
+        display: none;
+    }
+
+    .memory-hero-frame {
+        width: 305px;
+    }
+
+    .memories-library-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    .memories-view-controls {
+        align-self: flex-end;
+    }
+
+    .memories-empty {
+        min-height: 365px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .memories-bg-glow,
+    .memory-photo-shine,
+    .empty-center,
+    .memories-quote-heart {
+        animation: none;
+    }
+
+    .memories-brand-icon,
+    .memories-icon-button,
+    .memories-primary-button,
+    .memory-hero-frame,
+    .memory-stat,
+    .memory-filter,
+    .memories-empty-button,
+    .memory-modal,
+    .memory-modal-card,
+    .memory-option,
+    .memory-option i {
+        transition: none;
+    }
+}
+
+/* =========================================================
+   JAVASCRIPT STATES
+========================================================= */
+
+body.menu-open,
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.memory-reveal {
+    opacity: 0;
+
+    transform:
+        translateY(18px);
+
+    transition:
+        opacity 650ms ease
+        var(--memory-reveal-delay, 0ms),
+        transform 650ms
+        cubic-bezier(0.22, 1, 0.36, 1)
+        var(--memory-reveal-delay, 0ms);
+}
+
+.memory-reveal.memory-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================================================
+   MEMORY TOAST
+========================================================= */
+
+.memory-toast {
+    position: fixed;
+
+    z-index: 200;
+
+    right: 24px;
+    bottom: 24px;
+
+    width: min(
+        calc(100% - 48px),
+        380px
+    );
+
+    min-height: 55px;
+
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.09);
+
+    border-radius: 14px;
+
+    color: #ddd4da;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(31, 27, 39, 0.98),
+            rgba(15, 13, 20, 0.98)
+        );
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.40);
+
+    backdrop-filter: blur(20px);
+
+    opacity: 0;
+
+    transform:
+        translateY(12px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 220ms ease,
+        transform 260ms
+        cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.memory-toast.is-visible {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+.memory-toast-icon {
+    width: 29px;
+    height: 29px;
+
+    flex: 0 0 auto;
+
+    display: grid;
+    place-items: center;
+
+    border:
+        1px solid rgba(255, 176, 198, 0.12);
+
+    border-radius: 9px;
+
+    color: var(--mem-pink-light);
+
+    background:
+        rgba(237, 142, 170, 0.06);
+
+    font-size: 11px;
+}
+
+.memory-toast-text {
+    color: #afa5ad;
+
+    font-size: 9px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   LIST VIEW FOUNDATION
+========================================================= */
+
+.memories-grid.memory-list-view {
+    grid-template-columns: 1fr;
+}
+
+.memories-grid.memory-list-view .memory-card {
+    min-height: 120px;
+}
+
+
+/* =========================================================
+   MOBILE TOAST
+========================================================= */
+
+@media (max-width: 600px) {
+    .memory-toast {
+        right: 14px;
+        bottom: 14px;
+
+        width: calc(100% - 28px);
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .memory-reveal {
+        opacity: 1;
+
+        transform: none;
+
+        transition: none;
+    }
+
+    .memory-toast {
+        transition: none;
+    }
+}
