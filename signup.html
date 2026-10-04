@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Create your ElseWhere account and start building your private world together."
+    >
+
+    <title>Create Account — ElseWhere</title>
+
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/auth.css">
+</head>
+
+<body class="auth-page">
+
+    <!-- Background -->
+    <div class="auth-background" aria-hidden="true">
+        <div class="auth-glow auth-glow-one"></div>
+        <div class="auth-glow auth-glow-two"></div>
+        <div class="auth-grid"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="auth-header">
+        <a href="index.html" class="brand auth-brand" aria-label="ElseWhere home">
+            <span class="brand-icon" aria-hidden="true">♥</span>
+            <span class="brand-name">ElseWhere</span>
+        </a>
+
+        <a href="login.html" class="auth-back-link">
+            <span>Already have an account?</span>
+            <strong>Log in</strong>
+        </a>
+    </header>
+
+    <!-- Main -->
+    <main class="auth-main">
+        <div class="auth-shell">
+
+            <!-- Left Showcase -->
+            <section class="auth-showcase" aria-label="ElseWhere introduction">
+
+                <div class="auth-showcase-glow"></div>
+
+                <div class="auth-showcase-ring auth-ring-one"></div>
+                <div class="auth-showcase-ring auth-ring-two"></div>
+
+                <div class="auth-showcase-content">
+                    <span class="auth-showcase-label">
+                        YOUR WORLD STARTS HERE
+                    </span>
+
+                    <h1>
+                        Create a place
+                        <span>that belongs to both of you.</span>
+                    </h1>
+
+                    <p>
+                        Bring your memories, little moments, games and
+                        everything that makes your relationship yours into
+                        one beautiful private space.
+                    </p>
+
+                    <div class="auth-mini-preview">
+
+                        <div class="auth-mini-preview-top">
+                            <div class="auth-mini-brand">
+                                <span>♥</span>
+                                ElseWhere
+                            </div>
+
+                            <span class="auth-mini-status">
+                                PRIVATE
+                            </span>
+                        </div>
+
+                        <div class="auth-mini-preview-body">
+
+                            <div class="auth-mini-heading">
+                                <span>Your little world</span>
+                                <strong>together.</strong>
+                            </div>
+
+                            <div class="auth-mini-cards">
+                                <div class="auth-mini-card">
+                                    <span class="auth-mini-card-icon">✦</span>
+                                    <small>TOGETHER</small>
+                                    <strong>Play & Connect</strong>
+                                </div>
+
+                                <div class="auth-mini-card">
+                                    <span class="auth-mini-card-icon">♡</span>
+                                    <small>MEMORIES</small>
+                                    <strong>Keep moments</strong>
+                                </div>
+
+                                <div class="auth-mini-card">
+                                    <span class="auth-mini-card-icon">⌁</span>
+                                    <small>OUR WORLD</small>
+                                    <strong>Make it yours</strong>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Signup Card -->
+            <section class="auth-card" aria-labelledby="signup-title">
+
+                <div class="auth-card-header">
+                    <div class="auth-icon" aria-hidden="true">♥</div>
+
+                    <div>
+                        <span class="auth-eyebrow">WELCOME TO YOUR SPACE</span>
+
+                        <h2 id="signup-title">
+                            Create your account
+                        </h2>
+
+                        <p>
+                            It only takes a moment to get started.
+                        </p>
+                    </div>
+                </div>
+
+                <form
+                    id="signupForm"
+                    class="auth-form"
+                    novalidate
+                >
+
+                    <!-- Name -->
+                    <div class="form-field">
+                        <label for="fullName">
+                            Your name
+                        </label>
+
+                        <div class="input-shell">
+                            <span class="input-icon" aria-hidden="true">
+                                ✦
+                            </span>
+
+                            <input
+                                id="fullName"
+                                name="fullName"
+                                type="text"
+                                autocomplete="name"
+                                placeholder="Enter your name"
+                                maxlength="60"
+                                required
+                            >
+                        </div>
+
+                        <small
+                            id="fullNameError"
+                            class="field-error"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="form-field">
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <div class="input-shell">
+                            <span class="input-icon" aria-hidden="true">
+                                @
+                            </span>
+
+                            <input
+                                id="email"
+                                name="email"
+                                type="email"
+                                autocomplete="email"
+                                placeholder="you@example.com"
+                                required
+                            >
+                        </div>
+
+                        <small
+                            id="emailError"
+                            class="field-error"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-field">
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <div class="input-shell">
+                            <span class="input-icon" aria-hidden="true">
+                                •
+                            </span>
+
+                            <input
+                                id="password"
+                                name="password"
+                                type="password"
+                                autocomplete="new-password"
+                                placeholder="Create a password"
+                                minlength="6"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="passwordToggle"
+                                aria-label="Show password"
+                                aria-pressed="false"
+                            >
+                                Show
+                            </button>
+                        </div>
+
+                        <div class="password-hint">
+                            Use at least 6 characters.
+                        </div>
+
+                        <small
+                            id="passwordError"
+                            class="field-error"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="form-field">
+                        <label for="confirmPassword">
+                            Confirm password
+                        </label>
+
+                        <div class="input-shell">
+                            <span class="input-icon" aria-hidden="true">
+                                ✓
+                            </span>
+
+                            <input
+                                id="confirmPassword"
+                                name="confirmPassword"
+                                type="password"
+                                autocomplete="new-password"
+                                placeholder="Re-enter your password"
+                                minlength="6"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                class="password-toggle"
+                                id="confirmPasswordToggle"
+                                aria-label="Show confirmation password"
+                                aria-pressed="false"
+                            >
+                                Show
+                            </button>
+                        </div>
+
+                        <small
+                            id="confirmPasswordError"
+                            class="field-error"
+                            aria-live="polite"
+                        ></small>
+                    </div>
+
+                    <!-- Terms -->
+                    <label class="remember-option signup-terms">
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                        >
+
+                        <span class="custom-checkbox" aria-hidden="true"></span>
+
+                        <span class="remember-text">
+                            I agree to the
+                            <a href="#" class="inline-link">
+                                Terms of Use
+                            </a>
+                            and
+                            <a href="#" class="inline-link">
+                                Privacy Policy
+                            </a>.
+                        </span>
+                    </label>
+
+                    <small
+                        id="termsError"
+                        class="field-error"
+                        aria-live="polite"
+                    ></small>
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="auth-submit"
+                        id="signupSubmit"
+                    >
+                        <span>Create my account</span>
+                        <span class="auth-submit-arrow" aria-hidden="true">
+                            →
+                        </span>
+                    </button>
+
+                    <!-- Status -->
+                    <p
+                        id="signupStatus"
+                        class="auth-status"
+                        aria-live="polite"
+                    ></p>
+                </form>
+
+                <!-- Divider -->
+                <div class="auth-divider">
+                    <span>or continue with</span>
+                </div>
+
+                <!-- Social -->
+                <div class="social-auth">
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        data-provider="google"
+                    >
+                        <span class="social-icon">G</span>
+                        <span>Google</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="social-button"
+                        data-provider="facebook"
+                    >
+                        <span class="social-icon">f</span>
+                        <span>Facebook</span>
+                    </button>
+
+                </div>
+
+                <!-- Login Link -->
+                <p class="auth-switch">
+                    Already have a ElseWhere account?
+                    <a href="login.html">Log in</a>
+                </p>
+
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="auth-footer">
+        <span>© 2026 ElseWhere</span>
+        <span>Made for two.</span>
+    </footer>
+
+    <script src="./js/global.js" defer></script>
+    <script src="./js/auth.js" defer></script>
+
+</body>
+</html>
